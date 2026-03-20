@@ -1,0 +1,21 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "yrPublish Documentation"
+  chapters:
+    - index.qmd
+    - part: "Guide to the documentation"
+      chapters:
+        - DOC-GUIDE-v001.qmd
+        - DOC-AUTHORING-GUIDE.qmd
+        - QUARTO-DOC-GUIDE.qmd
+    - part: "Design documents"
+      chapters:
+        - BackgroundAndFeatures-0.0.1-v001.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true

@@ -1,0 +1,17 @@
+# Intro
+
+Welcome to the **yrPublish** documentation. This book gathers the project’s specs, setup instructions, and reference material in one place.
+This documentation all lives in the docs folder of the yrPublish repo.
+The documentation is maintained as a Quarto book. 
+To render the documentation, naviate to the docs folder and run `quarto preview`.
+
+**How to use this book**
+
+- Start with <DOC-GUIDE-v001.qmd> to understand document types and version numbering.
+
+***Below is the contents of the README.md that gets displayed on github.com***
+Other files in this book have names that should clearly indicate what they contain.
+
+---
+
+{{< include ../README.md >}}

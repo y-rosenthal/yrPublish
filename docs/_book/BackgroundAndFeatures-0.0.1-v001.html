@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5&nbsp; Description of customized Quarto book rendering system – yrPublish Documentation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./QUARTO-DOC-GUIDE.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-12250bc6d41324f970c4c53c607dc95b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./BackgroundAndFeatures-0.0.1-v001.html">Design documents</a></li><li class="breadcrumb-item"><a href="./BackgroundAndFeatures-0.0.1-v001.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Description of customized Quarto book rendering system</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">yrPublish Documentation</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intro</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Guide to the documentation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DOC-GUIDE-v001.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">DOC-GUIDE-v001.qmd</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DOC-AUTHORING-GUIDE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">DOC-AUTHORING-GUIDE.qmd</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./QUARTO-DOC-GUIDE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">QUARTO-DOC-GUIDE.qmd</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Design documents</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./BackgroundAndFeatures-0.0.1-v001.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Description of customized Quarto book rendering system</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span class="header-section-number">5.1</span> Background</a></li>
+  <li><a href="#ai-assisted-development" id="toc-ai-assisted-development" class="nav-link" data-scroll-target="#ai-assisted-development"><span class="header-section-number">5.2</span> AI assisted development</a>
+  <ul class="collapse">
+  <li><a href="#docs-folder" id="toc-docs-folder" class="nav-link" data-scroll-target="#docs-folder"><span class="header-section-number">5.2.1</span> docs folder</a></li>
+  <li><a href="#samplebooks-folder" id="toc-samplebooks-folder" class="nav-link" data-scroll-target="#samplebooks-folder"><span class="header-section-number">5.2.2</span> sampleBooks folder</a></li>
+  </ul></li>
+  <li><a href="#for-large-books-i-currently-use-the-quarto-part-concept" id="toc-for-large-books-i-currently-use-the-quarto-part-concept" class="nav-link" data-scroll-target="#for-large-books-i-currently-use-the-quarto-part-concept"><span class="header-section-number">5.3</span> For large books I currently use the Quarto “part” concept</a>
+  <ul class="collapse">
+  <li><a href="#v00n-version-numbers" id="toc-v00n-version-numbers" class="nav-link" data-scroll-target="#v00n-version-numbers"><span class="header-section-number">5.3.1</span> -v00n version numbers</a></li>
+  </ul></li>
+  <li><a href="#custom-chapter-numbers-enabled-via-css-and-javascript-at-runtime" id="toc-custom-chapter-numbers-enabled-via-css-and-javascript-at-runtime" class="nav-link" data-scroll-target="#custom-chapter-numbers-enabled-via-css-and-javascript-at-runtime"><span class="header-section-number">5.4</span> Custom chapter numbers (enabled via css and javascript at runtime)</a>
+  <ul class="collapse">
+  <li><a href="#motivation" id="toc-motivation" class="nav-link" data-scroll-target="#motivation"><span class="header-section-number">5.4.1</span> motivation</a></li>
+  <li><a href="#custom-markup" id="toc-custom-markup" class="nav-link" data-scroll-target="#custom-markup"><span class="header-section-number">5.4.2</span> custom markup</a></li>
+  <li><a href="#bash-scripts" id="toc-bash-scripts" class="nav-link" data-scroll-target="#bash-scripts"><span class="header-section-number">5.4.3</span> Bash scripts</a></li>
+  <li><a href="#suppress-original-chapter-numbers-with-custom-css" id="toc-suppress-original-chapter-numbers-with-custom-css" class="nav-link" data-scroll-target="#suppress-original-chapter-numbers-with-custom-css"><span class="header-section-number">5.4.4</span> suppress original chapter numbers with custom css</a></li>
+  <li><a href="#custom-javascript" id="toc-custom-javascript" class="nav-link" data-scroll-target="#custom-javascript"><span class="header-section-number">5.4.5</span> Custom javascript</a></li>
+  </ul></li>
+  <li><a href="#open-questions" id="toc-open-questions" class="nav-link" data-scroll-target="#open-questions"><span class="header-section-number">5.5</span> Open questions</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./BackgroundAndFeatures-0.0.1-v001.html">Design documents</a></li><li class="breadcrumb-item"><a href="./BackgroundAndFeatures-0.0.1-v001.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Description of customized Quarto book rendering system</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Description of customized Quarto book rendering system</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The origins of the yrPublish system grew out of my working with the Quarto system and creating some customizations for myself. In this document I try to capture the cusomizations that I created and used across several different quaro projects that I wrote, maintain and continue to develop.</p>
+<section id="background" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="background"><span class="header-section-number">5.1</span> Background</h2>
+<p>I have been creating several Quarto “book” projects that I render to HTML. Most of these are to support the classes that I teach. Some of these “books” have gotten quite large. I add material pretty regularly and these books gorw in size dynamically as time goes on. I keep the source code checked into git/github.</p>
+<p>For most of my books I have a github repo whose name ends in “Src”, e.g.&nbsp;myBookSrc. I have another github repo with the same base name, but that does NOT have the Src suffix, eg myBook. The Src repo contains the source code for the repo (mostly Quarto .qmd files). When I’m ready to publish the next version of the book to the Internet, I render the Src repo with Quarto. I then copy the HTMl/css/javascript and other rendered assets to my repo that does not have the Src extension.</p>
+<p>So far, I have been hosting the rendered books in Github and serving them via github Pages. Sometimes I have more than one version of the book that I host at different github Pages sites. For example</p>
+<ul>
+<li><p>rnotesSrc is a repo that contains the source code for a book I wrote about R.</p>
+<p>rnotes is a repo that contains just the rendered version of the book. I host access to this book via github pages at https://y-rosenthal.github.io/rnotes</p>
+<p>rnotesLatest is another github repo where I host the bleeding edge version of the rendered rnotesSrc book.</p></li>
+</ul>
+<p>Of couse the rendered versions of the books can be hosted anywhere, not just github Pages. However, github Pages is convenient for me for now.</p>
+</section>
+<section id="ai-assisted-development" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="ai-assisted-development"><span class="header-section-number">5.2</span> AI assisted development</h2>
+<p>I am using AI to help me develop the yrPublish product. Therefore I have structured this repo in a way that I think best aids AI in helping me.</p>
+<section id="docs-folder" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="docs-folder"><span class="header-section-number">5.2.1</span> docs folder</h3>
+<p>All documentation for the system, including user guides, as well as development documentation such as SPEC files are located in the docs folder. The docs are generally Quarto .qmd files and the entire docs folder is rendered as a “plain” Quarto book (i.e.&nbsp;not a yrPublish rendered book).</p>
+</section>
+<section id="samplebooks-folder" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="samplebooks-folder"><span class="header-section-number">5.2.2</span> sampleBooks folder</h3>
+<p>While developing this repo I thought it would be helpful for the AI to have access to the actual code from some of the book repos that I have been developing. I started with just one, so as not to overwhelm the AI. This one book is located in sampleBooks/DataManagementUsingRSrc. This has the .git folder for the repo in it also so that if desired, the AI can review the git history for that repo.</p>
+</section>
+</section>
+<section id="for-large-books-i-currently-use-the-quarto-part-concept" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="for-large-books-i-currently-use-the-quarto-part-concept"><span class="header-section-number">5.3</span> For large books I currently use the Quarto “part” concept</h2>
+<p>For larger books, I use the quarto “part” concept to segment the book for easier navigation. For example these are some books that I created: https://y-rosenthal.github.io/DataManagementUsingR/ https://y-rosenthal.github.io/excelNotes/ https://y-rosenthal.github.io/rnotesLatest/ (see screen shots)</p>
+<section id="v00n-version-numbers" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="v00n-version-numbers"><span class="header-section-number">5.3.1</span> -v00n version numbers</h3>
+<p>On many of my files, I include a “-v00N” version number that I increment when I create a new version of the file. I started using this system before I started to use git. However, even though I started to use git I find that it is still helpful sometimes to have a version number directly in the name of a file. In that way, if I use the same file in different books, I can very easily see which version of the file I’m using. For example, I am currently up to v004 for the yrChapterNumber Bash script. Therefore, the actual name of the script that I would run would be “yrChapterNumber-v004.sh”. For Bash scripts and utilities, I generally only increment the -v00N number when I make breaking changes. So I might checking numerous non-breaking changes to yrChapterNumber-v004 (e.g.&nbsp;changing the comments).</p>
+<p>For .qmd files I have a bunch of -v00N files from before I started using git. Now that I am using git, I just kept the same filenames. Sometimes, I might create a new file with a -v00N extension even though I’m using git. The motivation is often that I want more than one versin of a file to be immediately available in the repo for convenience purposes.</p>
+<p>This may not be the best system but it works for me now. It’s a system with very loose rules. I just want you to know what the -v00N endings on many files are in my repos.</p>
+</section>
+</section>
+<section id="custom-chapter-numbers-enabled-via-css-and-javascript-at-runtime" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="custom-chapter-numbers-enabled-via-css-and-javascript-at-runtime"><span class="header-section-number">5.4</span> Custom chapter numbers (enabled via css and javascript at runtime)</h2>
+<section id="motivation" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="motivation"><span class="header-section-number">5.4.1</span> motivation</h3>
+<p>I often modify the books in the middle of my teaching a course. Sometimes, I might add a chapter in the middle of the book which by default would cause the later chapter numbers to be incremented. I didn’t like that since I didn’t want to change the chapter numbers in the book in the middle of a course after students had already become familiar with the book’s layout. My thought was to label a new chapter that appears after chapter 12 for example, not as chapter 13, but rather as chapter 12b. In that way I could keep all existing chapter numbers. Unfortunately, Quarto doesn’t seem to have a standard way to have custom chapter names. Therefore I devised my own solution using custom markup and Javascript.</p>
+</section>
+<section id="custom-markup" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="custom-markup"><span class="header-section-number">5.4.2</span> custom markup</h3>
+<p>I added a <yrchapternumber> element to every first level heading in every page in the book. I then also added custom comments to the _quarto.yml at the end of every chapter line in the yml file that shows the preferred chapter number. For example, the following might be in a _quarto.yml. It shows the chapter numbers I want after # yrChapterNumber. In the following example (there is no actual book with the contents of this example), I might have had a book with 5 chapters (that didn’t have the emptyTags.qmd chapter). Suppose, I would want to add the emptyTags.qmd chapter in the middle of the semester. I would want the chapter number to be 1b and keep the rest of the chapter numbers the same.</yrchapternumber></p>
+<pre><code>- part: Intro to HTML
+  chapters:
+  - introToElements.qmd      # yrChapterNumber 1
+  - emptyTags.qmd            # yrChapterNumber 1b
+  - pageStructure.qmd        # yrChapterNumber 2
+  - tableTags.qmd           # yrChapterNumber  3
+
+- part: Intro to CSS
+  chapters:
+  - styleTag.qmd            # yrChapterNumber  4
+  - basicSelectors.qmd      # yrChapterNumber  5</code></pre>
+<p>To support this, all .qmd files would have single top level # header at the top of the file. The text of the # header in a .qmd file becomes the text displayed in the table of contents (TOC) on the left of the Quarto book website. To support custom chapter numbers I added a <yrchapternumber></yrchapternumber> element in the single top level # heading in all .qmd files in the Quarto book. I also created a Bash script, yrChapterNumber.sh, that gets the preferred chapter numbers from the _quarto.yml and populates the <yrchapternumber> elements with the correct chapter numbers. I would run this bash script prior to rendering the book. So for exmple after running the yrChapterNumber.sh script I might have the following:</yrchapternumber></p>
+<p>The first line of the “introToElements.qmd” file might ha: # <yrchapternumber>1. </yrchapternumber> Introduction to HTML element</p>
+<p>The first line of the “emptyTags.qmd” might be: # <yrchapternumber>1b. </yrchapternumber> Empty tableTags</p>
+<p>The first line of the pageStructure.qmd file might be: # <yrchapternumber>2. </yrchapternumber> Structure of a valid HTML page</p>
+<p>etc.</p>
+</section>
+<section id="bash-scripts" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="bash-scripts"><span class="header-section-number">5.4.3</span> Bash scripts</h3>
+<p>I have the following bash scripts:</p>
+<ul>
+<li><p>yrChapterNumber.sh - described above in the previous section</p></li>
+<li><p>yrRenumberChapter.sh :</p>
+<p>Suppose for the next version of the book I want to start again with sequential chapter numbers. I would run the command <code>yrRenumberChapters _quarto.yml</code>. The script with change the numbers in the #yrChapterNumber comments in the _quarto.yml to be sequestial numbers, e.g.&nbsp;1,2,3,4,5,6 instead of 1,1b,2,3,4,5 that was there before.</p></li>
+<li><p>yrBuildQuarto.sh</p>
+<p>I have a custom build script to support any other custom processing that I need to do to render the Quarto. For example at some point I think I needed to have the _quarto.yml file in the _book folder that contains the rendered website. The _quarto.yml is processed at runtime by custom javascript (in file yrstuff-v001.js)</p>
+<ul>
+<li>I believe that</li>
+</ul></li>
+</ul>
+</section>
+<section id="suppress-original-chapter-numbers-with-custom-css" class="level3" data-number="5.4.4">
+<h3 data-number="5.4.4" class="anchored" data-anchor-id="suppress-original-chapter-numbers-with-custom-css"><span class="header-section-number">5.4.4</span> suppress original chapter numbers with custom css</h3>
+<p>The original Quarto rendered chapter numbers are suppressed from being displayed with the custom css in the file yrStyles-main-v0001.css, which currently contains the following:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.chapter-number</span> {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>yrchapternumber { <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">99</span><span class="dt">%</span><span class="op">;</span> <span class="kw">color</span><span class="ch">:</span> <span class="cn">red</span><span class="op">;</span> }</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">.yrAppendixChapterNumber</span> {</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">display</span><span class="ch">:</span> <span class="dv">none</span><span class="op">;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="custom-javascript" class="level3" data-number="5.4.5">
+<h3 data-number="5.4.5" class="anchored" data-anchor-id="custom-javascript"><span class="header-section-number">5.4.5</span> Custom javascript</h3>
+<p>I have custom javascript that renumbers the chapters from the numbers that Quarto renders into the book, into the the numbers that are in the <yrchapternumber> elements. (Note that appendices are treated a little differently due to how quarto renders appendix numbers and names).</yrchapternumber></p>
+<p>I’ll tell you the truth - I don’t remember exactly how the following comes into play in the custom chapter numbering system system. However, it all works and I’m afraid to change it. Perhaps you could help me remember and understand how I designed this or perhaps you could point out some things that could be improved?</p>
+<p>The javascript code in question in the file <code>yrstuff-v001.js</code> I believe it is part of this system. It parses the _quarto.yml file to map the new chapter numbers to the names of the qmd/html files. For this reason the _quarto.yml file must be in the rendered website’s folder (i.e.&nbsp;it must be copied to the _book folder at render time). This is accomplished by the R program, <code>copy_quartoYml_to_bookFolder-v001.R</code> program that is referenced in the <code>pre-render:</code> section in _quarto.yml. Note that the _quarto.yml file is also in the <code>resources:</code> section of the _quarto.yml file - I’m not sure if that is truly necessary or not - I don’t recall.</p>
+<p>In the <code>post-render:</code> section of the _quarto.yml, I am also running an R script named <code>yrZipQmdFiles.R</code> that creates a .zip file from each .qmd file and puts it in the _book directory. I’m not 100% sure why I did that. If you can figure it out, let me know … I think that I might have wanted to add a link to each rendered HTML page that allows for the download of the source for the page. However, I don’t think I actually implemented that part - again I’m not sure - help me figure this out please …</p>
+</section>
+</section>
+<section id="open-questions" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="open-questions"><span class="header-section-number">5.5</span> Open questions</h2>
+<p>I have a few questions. I hope the AI can help me figure this out.</p>
+<p><strong>QUESTIONS:</strong></p>
+<p>The following are the first few lines of my _quarto.yml file</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> book</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> _book</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pre-render</span><span class="kw">:</span><span class="at"> copy_quartoYml_to_bookFolder-v001.R</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">post-render</span><span class="kw">:</span><span class="at"> Rscript yrZipQmdFiles.R</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">resources</span><span class="kw">:</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> _quarto.yml</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> yrNocacheHeaders-v001.html</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> yrstuff-v001.js</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> assignment-api-0000100-weatherDataApi-v002.qmd.zip</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> assignment-api-0000100-weatherDataApi-v001.qmd.zip</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">render</span><span class="kw">:</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="st">"*.qmd"</span><span class="co">  # Ensures all .qmd files are rendered, even if not in `chapters`</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="st">"assignment-api-0000100-weatherDataApi-v001.qmd"</span><span class="co">  # Ensure the old version gets rendered</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p>why did I use the Rscript command only in the post-render section but not in the pre-render section?</p></li>
+<li><p>Is there any reference to or use of the .zip files that I create in the post-render step in the finished rendered website?</p></li>
+<li><p>Why do I include _quarto.yml in the <code>resources:</code> section and also copy the _quarto.yml file to the _book folder in the <code>pre-render:</code> section</p></li>
+<li><p>I’m not sure why I included the following. I think it was something I did when I was in a rush to get something working. If you see any particular reason why this is necessary, let me know. I don’t think this is necessary for the general approach to building these types of books.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">render</span><span class="kw">:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">"*.qmd"</span><span class="co">  # Ensures all .qmd files are rendered, even if not in `chapters`</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">"assignment-api-0000100-weatherDataApi-v001.qmd"</span><span class="co">  # Ensure the old version gets rendered</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./QUARTO-DOC-GUIDE.html" class="pagination-link" aria-label="QUARTO-DOC-GUIDE.qmd">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">QUARTO-DOC-GUIDE.qmd</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

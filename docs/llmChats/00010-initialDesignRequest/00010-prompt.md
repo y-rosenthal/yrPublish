@@ -1,0 +1,158 @@
+# Description of my customized Quarto book rendering system
+
+## Background
+
+I have been creating several Quarto "book" projects that I render to HTML. Most of these are to support the classes that I teach. Some of these "books" have gotten quite large. I add material pretty regularly and these books gorw in size dynamically as time goes on. I keep the source code checked into git/github. For most of these books I have a 2nd github repo to which I copy the rendered website and serve that site through github pages.
+
+For larger books, I use the github "part" concept to segment the book for easier navigation. For example these are some books that I created: https://y-rosenthal.github.io/DataManagementUsingR/  https://y-rosenthal.github.io/excelNotes/
+https://y-rosenthal.github.io/rnotesLatest/  (see screen shots)
+
+I'm also attaching the _quarto.yml file for those books.
+
+### -v00n version numbers
+
+On many of my files, I include a "-v00N" version number that I increment when I create a new version of the file. I started using this system before I started to use git. However, even though I started to use git I find that it is still helpful sometimes to have a version number directly in the name of a file. In that way, if I use the same file in different books, I can very easily see which version of the file I'm using. For example, I am currently up to v004 for the yrChapterNumber Bash script. Therefore, the actual name of the script that I would run would be "yrChapterNumber-v004.sh". For Bash scripts and utilities, I generally only increment the -v00N number when I make breaking changes. So I might checking numerous non-breaking changes to yrChapterNumber-v004 (e.g. changing the comments).
+
+For .qmd files I have a bunch of -v00N files from before I started using git. Now that I am using git, I just kept the same filenames.
+Sometimes, I might create a new file with a -v00N extension even though I'm using git.
+The motivation is often that I want more than one versin of a file to be immediately available in the repo
+for convenience purposes.
+
+This may not be the best system but it works for me now. It's a system with very loose rules. I just want you to know what the -v00N endings on many files are in my repos.
+
+## Custom chapter numbers (enabled via css and javascript at runtime)
+
+### motivation
+
+I often modify the books in the middle of my teaching a course. Sometimes, I might add a chapter in the middle of the book which by default would cause the later chapter numbers to be incremented. I didn't like that since I didn't want to change the chapter numbers in the book in the middle of a course after students had already become familiar with the book's layout. My thought was to label a new chapter that appears after chapter 12 for example, not as chapter 13, but rather as chapter 12b. In that way I could keep all existing chapter numbers. Unfortunately, Quarto doesn't seem to have a standard way to have custom chapter names. Therefore I devised my own solution using custom markup and Javascript.
+
+### custom markup
+
+I added a <yrChapterNumber> element to every first level heading in every page in the book. I then also added custom comments to the _quarto.yml at the end of every chapter line in the yml file that shows the preferred chapter number. For example, the following might be in a _quarto.yml. It shows the chapter numbers I want after # yrChapterNumber. In the following example (there is no actual book with the contents of this example), I might have had a book with 5 chapters (that didn't have the emptyTags.qmd chapter). Suppose, I would want to add the emptyTags.qmd chapter in the middle of the semester. I would want the chapter number to be 1b and keep the rest of the chapter numbers the same.
+
+    - part: Intro to HTML
+      chapters:
+      - introToElements.qmd      # yrChapterNumber 1
+      - emptyTags.qmd            # yrChapterNumber 1b
+      - pageStructure.qmd        # yrChapterNumber 2
+      - tableTags.qmd           # yrChapterNumber  3
+
+    - part: Intro to CSS
+      chapters:
+      - styleTag.qmd            # yrChapterNumber  4
+      - basicSelectors.qmd      # yrChapterNumber  5
+
+
+To support this, all .qmd files would have single top level # header at the top of the file. The text of the # header in a .qmd file becomes the text displayed in the table of contents (TOC) on the left of the Quarto book website. To support custom chapter numbers I added a <yrChapterNumber></yrChapterNumber> element in the single top level # heading in all .qmd files in the Quarto book. I also created a Bash script, yrChapterNumber.sh, that gets the preferred chapter numbers from the _quarto.yml and populates the <yrChapterNumber> elements with the correct chapter numbers. I would run this bash script prior to rendering the book. So for exmple after running the yrChapterNumber.sh script I might have the following:
+
+The first line of the "introToElements.qmd" file might ha: # <yrChapterNumber>1. </yrChapterNumber> Introduction to HTML element
+
+The first line of the  "emptyTags.qmd" might be:           # <yrChapterNumber>1b. </yrChapterNumber> Empty tableTags
+
+The first line of the pageStructure.qmd file might be:     # <yrChapterNumber>2. </yrChapterNumber> Structure of a valid HTML page
+
+etc.
+
+
+### Bash scripts
+
+I have the following bash scripts:
+
+- yrChapterNumber.sh - described above in the previous section
+
+- yrRenumberChapter.sh :
+
+  Suppose for the next version of the book I want to start again with sequential chapter numbers. I would run the command `yrRenumberChapters _quarto.yml`. The script with change the numbers in the #yrChapterNumber comments in the _quarto.yml to be sequestial numbers, e.g. 1,2,3,4,5,6 instead of 1,1b,2,3,4,5 that was there before.
+
+- yrBuildQuarto.sh
+
+  I have a custom build script to support any other custom processing that I need to do to render the Quarto. For example at some point I think I needed to have the _quarto.yml file in the _book folder that contains the rendered website. The _quarto.yml is processed at runtime by custom javascript (in file yrstuff-v001.js)
+
+
+  - I believe that
+
+### suppress original chapter numbers with custom css
+
+The original Quarto rendered chapter numbers are suppressed from being displayed with the custom css in the file yrStyles-main-v0001.css, which currently contains the following:
+
+```css
+.chapter-number {
+    display: none;
+}
+
+yrchapternumber { font-size: 99%; color: red; }
+
+.yrAppendixChapterNumber {
+    display: none;
+}
+```
+
+
+### Custom javascript
+
+I have custom javascript that renumbers the chapters from the numbers that Quarto renders into the book, into the the numbers that are in the <yrChapterNumber> elements. (Note that appendices are treated a little differently due to how quarto renders appendix numbers and names).
+
+I'll tell you the truth - I don't remember exactly how the following comes into play in the custom chapter numbering system system. However, it all works and I'm afraid to change it. Perhaps you could help me remember and understand how I designed this or perhaps you could point out some things that could be improved?
+
+The javascript code in question in the file `yrstuff-v001.js` I believe it is part of this system. It parses the _quarto.yml file to map the new chapter numbers to the names of the qmd/html files. For this reason the _quarto.yml file must be in the rendered website's folder (i.e. it must be copied to the _book folder at render time). This is accomplished by the R program, `copy_quartoYml_to_bookFolder-v001.R` program that is referenced in the `pre-render:` section in _quarto.yml. Note that the _quarto.yml file is also in the  `resources:` section of the _quarto.yml file - I'm not sure if that is truly necessary or not - I don't recall.
+
+In the `post-render:` section of the _quarto.yml, I am also running an R script named `yrZipQmdFiles.R` that creates a .zip file from each .qmd file and puts it in the _book directory. I'm not 100% sure why I did that. If you can figure it out, let me know ... I think that I might have wanted to add a link to each rendered HTML page that allows for the download of the source for the page. However, I don't think I actually implemented that part - again I'm not sure - help me figure this out please ...
+
+## Request for LLM to help me with
+
+I need help with the following:
+
+### Request 1. Please help me try to answer the following questions
+
+I have a few questions. Maybe you can help me figure this out.
+The following are the first few lines of my _quarto.yml file
+
+```yml
+project:
+  type: book
+  output-dir: _book
+  pre-render: copy_quartoYml_to_bookFolder-v001.R
+  post-render: Rscript yrZipQmdFiles.R
+  resources:
+    - _quarto.yml
+    - yrNocacheHeaders-v001.html
+    - yrstuff-v001.js
+    - assignment-api-0000100-weatherDataApi-v002.qmd.zip
+    - assignment-api-0000100-weatherDataApi-v001.qmd.zip
+  render:
+    - "*.qmd"  # Ensures all .qmd files are rendered, even if not in `chapters`
+    - "assignment-api-0000100-weatherDataApi-v001.qmd"  # Ensure the old version gets rendered
+```
+
+**QUESTIONS:**
+
+- why did I use the Rscript command only in the post-render section
+  but not in the pre-render section?
+
+- Is there any reference to or use of the .zip files that I create in
+  the post-render step in the finished rendered website?
+
+- Why do I include _quarto.yml in the `resources:` section and also copy
+  the _quarto.yml file to the _book folder in the `pre-render:` section
+
+- I'm not sure why I included the following. I think it was something I did when I was in a rush to get something working.
+  If you see any particular reason why this is necessary, let me know. I don't think this is necessary for the general
+  approach to building these types of books.
+
+  ```yml
+  render:
+    - "*.qmd"  # Ensures all .qmd files are rendered, even if not in `chapters`
+    - "assignment-api-0000100-weatherDataApi-v001.qmd"  # Ensure the old version gets rendered
+  ```
+
+
+## Request 2. Document system
+
+Please
+
+
+
+
+
+
+
