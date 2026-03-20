@@ -1,1 +1,4 @@
-/sampleBooks/
+# This file is same format as .gitignore
+# Cursor will not be able to READ or WRITE these files.
+# If you want just READ access without WRITE access, the use the filesystem permissions instead,
+# e.g. chmod -R a-w sampleBooks
