@@ -1,1 +1,5 @@
 /sampleBooks/
+/.quarto/
+.quarto.save
+**/*.quarto_ipynb
+
