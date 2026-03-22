@@ -1,4 +1,4 @@
-# Description of customized Quarto book rendering system
+# Pre-yrPublish Description of customized Quarto book rendering system
 
 The origins of the yrPublish system grew out of my working with the Quarto system
 and creating some customizations for myself. In this document I try to capture the
