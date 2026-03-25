@@ -1,0 +1,60 @@
+# 00030-implementSPEC-0.0.1
+
+## Cursor AI generated prompt (for your implementation chat)
+
+This prompt was created by Cursor AI in response to your request to generate a starter prompt.
+
+You are implementing **yrPublish v0.0.1** according to the design spec in:
+
+- [`../../SPEC-initial-yrPublish-design-0.0.1-v001.qmd`](../../SPEC-initial-yrPublish-design-0.0.1-v001.qmd)
+
+### Goal
+Build a **single bash CLI** named `yrPublish` that wraps Quarto and provides the v0.0.1 subcommands described in the spec.
+
+### Key highlights (do not miss these)
+
+The bullets below are the most commonly missed details, but you must implement the *entire* v0.0.1 SPEC document. Do not stop at these bullets—review and implement every requirement/acceptance criterion in:
+- [`../../SPEC-initial-yrPublish-design-0.0.1-v001.qmd`](../../SPEC-initial-yrPublish-design-0.0.1-v001.qmd)
+
+1. **Version pinning + repo-local locking**
+   - Each yrPublish project must have `.yrPublish/yrPublish.lock`.
+   - During `yrPublish create-project`, yrPublish must **vendor/copy** the yrPublish implementation assets for the locked version into:
+     - `.yrPublish/<locked-version>/...`
+   - All subsequent commands must use the pinned vendored assets.
+
+2. **Dependency isolation**
+   - Pin a Quarto version in `.yrPublish/config/quarto-version.txt`.
+   - Use a vendored Quarto install under `.yrPublish/tools/quarto/<version>/bin/quarto`.
+   - Ensure all subcommands run the vendored Quarto binary, not the global `quarto` from PATH.
+
+3. **Version reporting**
+   - Implement:
+     - `yrPublish version-cli` → report the version baked into the running executable/script (do not read the project).
+     - `yrPublish version-project <project-path>` → read required version from `.yrPublish/yrPublish.lock`.
+   - Any project-operating subcommand should warn if `version-cli` != `version-project`.
+
+4. **Chapter numbering behavior**
+   - Implement:
+     - `yrPublish renumber-chapters` to sequentially renumber `# yrChapterNumber <n>` comments in `_quarto.yml` using the existing v0.0.0 script logic (vendored unchanged for v0.0.1).
+     - `yrPublish apply-chapter-numbers` to update `<yrChapterNumber>...</yrChapterNumber>` inside the `.qmd` files using the existing v0.0.0 script logic (vendored unchanged for v0.0.1).
+   - `yrPublish render` must automatically run `apply-chapter-numbers` before invoking Quarto.
+
+### Constraints
+- For v0.0.1, do **not** modify the v0.0.0 scripts/assets directly; treat them as unchanged resources that are copied/vendored into projects.
+
+### What to produce in this implementation chat
+- Code changes to add the `yrPublish` CLI (including help + `help <subcommand>`).
+- The `create-project` workflow that scaffolds `.yrPublish/` with:
+  - `yrPublish.lock`
+  - vendored/pinned yrPublish implementation assets under `.yrPublish/<locked-version>/`
+  - vendored Quarto under `.yrPublish/tools/quarto/...`
+- Any internal helper scripts needed under the repo’s `.yrPublish/` design area (as required by the spec).
+- Update or add tests and/or example project scaffolding as described in the spec.
+
+### Verification steps (explain how you verified)
+- How to test `yrPublish version-cli` and `yrPublish version-project`.
+- How to test that `create-project` produces the expected `.yrPublish/` structure and pinned assets.
+- How to test `render` ensures chapter numbers are applied (and how to verify runtime JS renumbering works).
+
+If anything is ambiguous or under-specified, ask clarifying questions before coding.
+

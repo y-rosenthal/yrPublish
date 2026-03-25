@@ -145,7 +145,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intro</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">index.qmd</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -189,7 +189,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./BackgroundAndFeatures-0.0.1-v001.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Description of customized Quarto book rendering system</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">BackgroundAndFeatures-0.0.1-v001.qmd</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./SPEC-initial-yrPublish-design-0.0.1-v001.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">SPEC-initial-yrPublish-design-0.0.1-v001.qmd</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">llm prompts</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./llmChats/00010-initialDesignRequest/00010-prompt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">00010-initialDesignRequest</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./llmChats/00020-buildInitialSystem-answerQuestions/prompt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">00020-buildInitialSystem-answerQuestions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./llmChats/00030-implementSPEC-0.0.1/prompt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">00030-implementSPEC-0.0.1</span></span></a>
   </div>
 </li>
       </ul>
@@ -314,14 +349,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="adding-or-removing-chapters" class="level2" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="adding-or-removing-chapters"><span class="header-section-number">4.5</span> Adding or removing chapters</h2>
-<p>The book’s table of contents (TOC) on the left is defined in <strong><code>docs/_quarto.yml</code></strong> under <code>book.chapters</code>. Use the steps below so that TOC entries show the actual filenames as links and, when you have multiple versions of a doc, the most recent appears first.</p>
+<p>The book’s table of contents (TOC) on the left is defined in <strong><code>docs/_quarto.yml</code></strong> under <code>book.chapters</code>. Use the steps below so that TOC labels (and page H1 headings) match the conventions used in this repo, and when you have multiple versions of a doc, the most recent appears first.</p>
 <section id="how-to-add-a-new-doc" class="level3" data-number="4.5.1">
 <h3 data-number="4.5.1" class="anchored" data-anchor-id="how-to-add-a-new-doc"><span class="header-section-number">4.5.1</span> How to add a new doc</h3>
 <ol type="1">
 <li><p>Add the <code>.qmd</code> file (e.g.&nbsp;<code>My-New-Doc.qmd</code>) to <code>docs/</code>.</p></li>
-<li><p>Set the document’s <strong>YAML <code>title</code></strong> to the <strong>filename</strong> (including <code>.qmd</code>). That way the left-margin TOC will use the filename as the link text:</p>
+<li><p>Set the document’s single level-1 heading (<code># ...</code>) to the identifier you want in the TOC:</p>
+<ul>
+<li>For normal docs (not in <code>llmChats/**</code>), use the exact <code>.qmd</code> filename (including <code>.qmd</code>).</li>
+<li>For <code>llmChats/**/prompt.qmd</code> and <code>llmChats/**/prompt.md</code>, use the containing folder name (the directory that holds <code>prompt.*</code>).</li>
+</ul>
+<p>If you use a YAML header, set <strong><code>title</code></strong> to the same string as the H1 so everything stays consistent:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My-New-Doc.qmd"</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My-New-Doc.qmd"</span><span class="co">  # must match the H1 exactly</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>In <strong><code>docs/_quarto.yml</code></strong>, add the file under the right part in <code>book.chapters</code>. Order matters: list items in the order you want them in the TOC:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chapters</span><span class="kw">:</span></span>
@@ -778,8 +818,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./BackgroundAndFeatures-0.0.1-v001.html" class="pagination-link" aria-label="Description of customized Quarto book rendering system">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Description of customized Quarto book rendering system</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./BackgroundAndFeatures-0.0.1-v001.html" class="pagination-link" aria-label="BackgroundAndFeatures-0.0.1-v001.qmd">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">BackgroundAndFeatures-0.0.1-v001.qmd</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

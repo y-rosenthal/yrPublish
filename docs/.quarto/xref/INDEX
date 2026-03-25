@@ -13,5 +13,17 @@
   },
   "BackgroundAndFeatures-0.0.1-v001.qmd": {
     "BackgroundAndFeatures-0.0.1-v001.html": "976fd6f3"
+  },
+  "SPEC-initial-yrPublish-design-0.0.1-v001.qmd": {
+    "SPEC-initial-yrPublish-design-0.0.1-v001.html": "a473f15c"
+  },
+  "llmChats/00010-initialDesignRequest/00010-prompt.md": {
+    "00010-prompt.html": "8cb54e36"
+  },
+  "llmChats/00020-buildInitialSystem-answerQuestions/prompt.qmd": {
+    "prompt.html": "4c9fb66b"
+  },
+  "llmChats/00030-implementSPEC-0.0.1/prompt.qmd": {
+    "prompt.html": "3c279ac8"
   }
 }

@@ -14,6 +14,12 @@ book:
     - part: "Design documents"
       chapters:
         - BackgroundAndFeatures-0.0.1-v001.qmd
+        - SPEC-initial-yrPublish-design-0.0.1-v001.qmd
+    - part: "llm prompts"
+      chapters:
+        - llmChats/00010-initialDesignRequest/00010-prompt.md
+        - llmChats/00020-buildInitialSystem-answerQuestions/prompt.qmd
+        - llmChats/00030-implementSPEC-0.0.1/prompt.qmd
 
 format:
   html:

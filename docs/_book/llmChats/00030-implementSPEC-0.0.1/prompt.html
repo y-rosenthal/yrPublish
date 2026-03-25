@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; DOC-AUTHORING-GUIDE.qmd – yrPublish Documentation</title>
+<title>9&nbsp; 00030-implementSPEC-0.0.1 – yrPublish Documentation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,63 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./QUARTO-DOC-GUIDE.html" rel="next">
-<link href="./DOC-GUIDE-v001.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-12250bc6d41324f970c4c53c607dc95b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../llmChats/00020-buildInitialSystem-answerQuestions/prompt.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-12250bc6d41324f970c4c53c607dc95b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -117,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./DOC-GUIDE-v001.html">Guide to the documentation</a></li><li class="breadcrumb-item"><a href="./DOC-AUTHORING-GUIDE.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">DOC-AUTHORING-GUIDE.qmd</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../llmChats/00010-initialDesignRequest/00010-prompt.html">llm prompts</a></li><li class="breadcrumb-item"><a href="../../llmChats/00030-implementSPEC-0.0.1/prompt.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">00030-implementSPEC-0.0.1</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -132,7 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">yrPublish Documentation</a> 
+      <a href="../../">yrPublish Documentation</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -144,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">index.qmd</span></span></a>
   </div>
 </li>
@@ -159,19 +123,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./DOC-GUIDE-v001.html" class="sidebar-item-text sidebar-link">
+  <a href="../../DOC-GUIDE-v001.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">DOC-GUIDE-v001.qmd</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./DOC-AUTHORING-GUIDE.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../DOC-AUTHORING-GUIDE.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">DOC-AUTHORING-GUIDE.qmd</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./QUARTO-DOC-GUIDE.html" class="sidebar-item-text sidebar-link">
+  <a href="../../QUARTO-DOC-GUIDE.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">QUARTO-DOC-GUIDE.qmd</span></span></a>
   </div>
 </li>
@@ -188,13 +152,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./BackgroundAndFeatures-0.0.1-v001.html" class="sidebar-item-text sidebar-link">
+  <a href="../../BackgroundAndFeatures-0.0.1-v001.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">BackgroundAndFeatures-0.0.1-v001.qmd</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./SPEC-initial-yrPublish-design-0.0.1-v001.html" class="sidebar-item-text sidebar-link">
+  <a href="../../SPEC-initial-yrPublish-design-0.0.1-v001.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">SPEC-initial-yrPublish-design-0.0.1-v001.qmd</span></span></a>
   </div>
 </li>
@@ -211,19 +175,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./llmChats/00010-initialDesignRequest/00010-prompt.html" class="sidebar-item-text sidebar-link">
+  <a href="../../llmChats/00010-initialDesignRequest/00010-prompt.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">00010-initialDesignRequest</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./llmChats/00020-buildInitialSystem-answerQuestions/prompt.html" class="sidebar-item-text sidebar-link">
+  <a href="../../llmChats/00020-buildInitialSystem-answerQuestions/prompt.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">00020-buildInitialSystem-answerQuestions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./llmChats/00030-implementSPEC-0.0.1/prompt.html" class="sidebar-item-text sidebar-link">
+  <a href="../../llmChats/00030-implementSPEC-0.0.1/prompt.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">00030-implementSPEC-0.0.1</span></span></a>
   </div>
 </li>
@@ -239,19 +203,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#doc-authoring-guide" id="toc-doc-authoring-guide" class="nav-link active" data-scroll-target="#doc-authoring-guide"><span class="header-section-number">4</span> DOC-AUTHORING-GUIDE.qmd</a>
+  <li><a href="#cursor-ai-generated-prompt-for-your-implementation-chat" id="toc-cursor-ai-generated-prompt-for-your-implementation-chat" class="nav-link active" data-scroll-target="#cursor-ai-generated-prompt-for-your-implementation-chat"><span class="header-section-number">9.1</span> Cursor AI generated prompt (for your implementation chat)</a>
   <ul class="collapse">
-  <li><a href="#document-format-use-quarto-.qmd" id="toc-document-format-use-quarto-.qmd" class="nav-link" data-scroll-target="#document-format-use-quarto-.qmd"><span class="header-section-number">4.1</span> Document format: use Quarto (<code>.qmd</code>)</a></li>
-  <li><a href="#version-numbering" id="toc-version-numbering" class="nav-link" data-scroll-target="#version-numbering"><span class="header-section-number">4.2</span> Version numbering</a></li>
-  <li><a href="#readme-and-the-book" id="toc-readme-and-the-book" class="nav-link" data-scroll-target="#readme-and-the-book"><span class="header-section-number">4.3</span> README and the book</a></li>
-  <li><a href="#one-top-level-heading-per-document-quarto-book-standard" id="toc-one-top-level-heading-per-document-quarto-book-standard" class="nav-link" data-scroll-target="#one-top-level-heading-per-document-quarto-book-standard"><span class="header-section-number">4.4</span> One top-level heading per document (Quarto book standard)</a>
-  <ul class="collapse">
-  <li><a href="#toctitle-labeling-convention-for-this-repo" id="toc-toctitle-labeling-convention-for-this-repo" class="nav-link" data-scroll-target="#toctitle-labeling-convention-for-this-repo"><span class="header-section-number">4.4.1</span> TOC/title labeling convention for this repo</a></li>
-  </ul></li>
-  <li><a href="#do-not-use-hardcoded-section-numbers" id="toc-do-not-use-hardcoded-section-numbers" class="nav-link" data-scroll-target="#do-not-use-hardcoded-section-numbers"><span class="header-section-number">4.5</span> Do not use hardcoded section numbers</a></li>
-  <li><a href="#use-quarto-cross-references-for-sections" id="toc-use-quarto-cross-references-for-sections" class="nav-link" data-scroll-target="#use-quarto-cross-references-for-sections"><span class="header-section-number">4.6</span> Use Quarto cross-references for sections</a></li>
-  <li><a href="#other-quarto-book-authoring-practices" id="toc-other-quarto-book-authoring-practices" class="nav-link" data-scroll-target="#other-quarto-book-authoring-practices"><span class="header-section-number">4.7</span> Other Quarto book authoring practices</a></li>
-  <li><a href="#summary-checklist" id="toc-summary-checklist" class="nav-link" data-scroll-target="#summary-checklist"><span class="header-section-number">4.8</span> Summary checklist</a></li>
+  <li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal"><span class="header-section-number">9.1.1</span> Goal</a></li>
+  <li><a href="#key-highlights-do-not-miss-these" id="toc-key-highlights-do-not-miss-these" class="nav-link" data-scroll-target="#key-highlights-do-not-miss-these"><span class="header-section-number">9.1.2</span> Key highlights (do not miss these)</a></li>
+  <li><a href="#constraints" id="toc-constraints" class="nav-link" data-scroll-target="#constraints"><span class="header-section-number">9.1.3</span> Constraints</a></li>
+  <li><a href="#what-to-produce-in-this-implementation-chat" id="toc-what-to-produce-in-this-implementation-chat" class="nav-link" data-scroll-target="#what-to-produce-in-this-implementation-chat"><span class="header-section-number">9.1.4</span> What to produce in this implementation chat</a></li>
+  <li><a href="#verification-steps-explain-how-you-verified" id="toc-verification-steps-explain-how-you-verified" class="nav-link" data-scroll-target="#verification-steps-explain-how-you-verified"><span class="header-section-number">9.1.5</span> Verification steps (explain how you verified)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -259,9 +217,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./DOC-GUIDE-v001.html">Guide to the documentation</a></li><li class="breadcrumb-item"><a href="./DOC-AUTHORING-GUIDE.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">DOC-AUTHORING-GUIDE.qmd</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../llmChats/00010-initialDesignRequest/00010-prompt.html">llm prompts</a></li><li class="breadcrumb-item"><a href="../../llmChats/00030-implementSPEC-0.0.1/prompt.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">00030-implementSPEC-0.0.1</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">DOC-AUTHORING-GUIDE.qmd</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">00030-implementSPEC-0.0.1</span></h1>
 </div>
 
 
@@ -278,90 +236,84 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>This guide explains how to write and maintain documentation for this system. Follow these conventions so the docs stay consistent, render correctly as a Quarto book, and remain easy to navigate and update.</p>
-<section id="doc-authoring-guide" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> DOC-AUTHORING-GUIDE.qmd</h1>
-<section id="document-format-use-quarto-.qmd" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="document-format-use-quarto-.qmd"><span class="header-section-number">4.1</span> Document format: use Quarto (<code>.qmd</code>)</h2>
+<section id="cursor-ai-generated-prompt-for-your-implementation-chat" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="cursor-ai-generated-prompt-for-your-implementation-chat"><span class="header-section-number">9.1</span> Cursor AI generated prompt (for your implementation chat)</h2>
+<p>This prompt was created by Cursor AI in response to your request to generate a starter prompt.</p>
+<p>You are implementing <strong>yrPublish v0.0.1</strong> according to the design spec in:</p>
 <ul>
-<li><p>Write all documentation in <strong>Quarto</strong> format using the <code>.qmd</code> extension.</p></li>
-<li><p><code>.qmd</code> files support standard Markdown plus Quarto features (cross-references, code execution, conditional content, and a single YAML header for metadata).</p></li>
-<li><p>Use a YAML header at the top of each document with at least a <code>title</code>:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Your document title"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>To include a doc in the rendered book, add it to <code>docs/_quarto.yml</code> in the desired order. See <a href="./QUARTO-DOC-GUIDE.html">QUARTO-DOC-GUIDE.qmd</a> for how to build the book.</p></li>
+<li><a href="../../SPEC-initial-yrPublish-design-0.0.1-v001.html"><code>../../SPEC-initial-yrPublish-design-0.0.1-v001.qmd</code></a></li>
 </ul>
+<section id="goal" class="level3" data-number="9.1.1">
+<h3 data-number="9.1.1" class="anchored" data-anchor-id="goal"><span class="header-section-number">9.1.1</span> Goal</h3>
+<p>Build a <strong>single bash CLI</strong> named <code>yrPublish</code> that wraps Quarto and provides the v0.0.1 subcommands described in the spec.</p>
 </section>
-<section id="version-numbering" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="version-numbering"><span class="header-section-number">4.2</span> Version numbering</h2>
-<p>Follow the version numbering scheme described in <a href="./DOC-GUIDE-v001.html">DOC-GUIDE-v001.qmd</a>:</p>
-<ul>
-<li>Use the <strong>-v001</strong>-style suffix in document names when you want to track versions (e.g.&nbsp;<code>SETUP-0.0.1-v001.qmd</code>, <code>DOC-GUIDE-v001.qmd</code>).</li>
-<li>SPEC documents are versioned to match releases (e.g.&nbsp;SPEC-0.0.1).</li>
-<li>PRD and other living docs can carry both a SPEC version and a secondary version in the filename when they are updated.</li>
-</ul>
-<p>Do not encode version numbers in the body of the document (e.g.&nbsp;avoid “see Section 2.3”); use cross-references instead so numbers stay correct when sections change.</p>
-</section>
-<section id="readme-and-the-book" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="readme-and-the-book"><span class="header-section-number">4.3</span> README and the book</h2>
-<p>The <strong>repository README</strong> is <code>README.md</code> in the project root (for GitHub). It is the <strong>single source of truth</strong> for the project overview. The book includes it via <code>docs/Overview.qmd</code>; <strong>edit only the root README</strong> so the repo and the book stay in sync. The Overview chapter is an <strong>exception</strong>: it has no level-1 heading in the <code>.qmd</code> file; the page title and single level-1 heading come <strong>only</strong> from the included <code>README.md</code> (e.g.&nbsp;<code># yrS3 — Tutorial &amp; Testing System</code>). The sidebar shows “README” (from the YAML <code>title</code> in <code>Overview.qmd</code>) so readers know the chapter is the repo README.</p>
-</section>
-<section id="one-top-level-heading-per-document-quarto-book-standard" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="one-top-level-heading-per-document-quarto-book-standard"><span class="header-section-number">4.4</span> One top-level heading per document (Quarto book standard)</h2>
-<ul>
-<li>Each document should have <strong>exactly one</strong> level-1 heading (<code>#</code>). That heading is the document’s main title (or the main title is set in the YAML <code>title</code> and the single <code>#</code> is the same or a short form).</li>
-<li>All other sections should use <code>##</code> (level 2), <code>###</code> (level 3), and so on. Do not add a second <code>#</code> in the same file.</li>
-<li>This matches Quarto book authoring practice: the first heading level defines the document’s top-level structure, and having a single <code>#</code> keeps numbering and navigation consistent when the book is built.</li>
-</ul>
-<section id="toctitle-labeling-convention-for-this-repo" class="level3" data-number="4.4.1">
-<h3 data-number="4.4.1" class="anchored" data-anchor-id="toctitle-labeling-convention-for-this-repo"><span class="header-section-number">4.4.1</span> TOC/title labeling convention for this repo</h3>
-<p>To ensure that the HTML book sidebar label and the page’s top-level heading match the identifiers you expect, use this rule:</p>
-<ul>
-<li>For normal docs listed in the book (e.g.&nbsp;<code>docs/*.qmd</code> chapters), set the single level-1 heading to the exact <code>.qmd</code> filename (including <code>.qmd</code>).</li>
-<li>For <code>docs/llmChats/**/prompt.qmd</code> and <code>docs/llmChats/**/prompt.md</code>, set the single level-1 heading to the containing folder name (the directory that holds the <code>prompt.*</code> file).</li>
-</ul>
-</section>
-</section>
-<section id="do-not-use-hardcoded-section-numbers" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="do-not-use-hardcoded-section-numbers"><span class="header-section-number">4.5</span> Do not use hardcoded section numbers</h2>
-<ul>
-<li><strong>Do not</strong> put section numbers in headings (e.g.&nbsp;avoid <code>## 2. Local development</code> or <code>### 1.1 Node.js</code>). Quarto will number sections automatically when the book is rendered.</li>
-<li><strong>Do not</strong> refer to sections by hand-typed numbers in the text (e.g.&nbsp;“see Section 2.3” or “as in Section 1.6”). Those numbers go out of date when you add, remove, or reorder sections.</li>
-</ul>
-</section>
-<section id="use-quarto-cross-references-for-sections" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="use-quarto-cross-references-for-sections"><span class="header-section-number">4.6</span> Use Quarto cross-references for sections</h2>
-<ul>
-<li><p>Give each section that you might want to reference a <strong>label</strong> (ID) in the heading using the <code>{#sec-id}</code> syntax:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Local development {#sec-local-development}</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">### Supabase project setup (CLI-first where possible) {#sec-supabase-project-setup}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Use <strong>short, stable, descriptive IDs</strong> (e.g.&nbsp;<code>#sec-supabase-cli</code>, <code>#sec-configure-tests</code>). Avoid spaces; use hyphens. The <code>sec-</code> prefix is the Quarto convention for section labels.</p></li>
-<li><p>In the text, refer to that section with <code>@sec-id</code>. Quarto will replace it with the correct section number and, in HTML, a clickable link:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>For a hosted project, see @sec-supabase-project-setup.</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>If you run Supabase locally, follow @sec-running-supabase-locally.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Rendered output will show the correct number (e.g.&nbsp;“Section 2.3”) and link to the section. When you add or reorder sections, only the labels need to stay the same; the numbers update automatically.</p></li>
-</ul>
-</section>
-<section id="other-quarto-book-authoring-practices" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="other-quarto-book-authoring-practices"><span class="header-section-number">4.7</span> Other Quarto book authoring practices</h2>
-<ul>
-<li><strong>Links to other docs:</strong> Prefer relative links to other <code>.qmd</code> files in the repo (e.g.&nbsp;<code>[DOC-GUIDE-v001.qmd](DOC-GUIDE-v001.qmd)</code>) so links work in both the source and the built book.</li>
-<li><strong>Code blocks:</strong> Use fenced code blocks with a language identifier (e.g.&nbsp;<code>```bash</code>, <code>```toml</code>) for syntax highlighting.</li>
-<li><strong>Consistency:</strong> Use the same heading hierarchy and naming style across documents so the book table of contents and cross-references stay predictable.</li>
-<li><strong>Building the book:</strong> After changing docs, rebuild with <code>quarto render</code> from the <code>docs/</code> directory (or as described in <a href="./QUARTO-DOC-GUIDE.html">QUARTO-DOC-GUIDE.qmd</a>) and check that cross-references and numbering look correct in <code>docs/_book/</code>.</li>
-</ul>
-</section>
-<section id="summary-checklist" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="summary-checklist"><span class="header-section-number">4.8</span> Summary checklist</h2>
-<p>When writing or editing a doc:</p>
+<section id="key-highlights-do-not-miss-these" class="level3" data-number="9.1.2">
+<h3 data-number="9.1.2" class="anchored" data-anchor-id="key-highlights-do-not-miss-these"><span class="header-section-number">9.1.2</span> Key highlights (do not miss these)</h3>
+<p>The bullets below are the most commonly missed details, but you must implement the <em>entire</em> v0.0.1 SPEC document. Do not stop at these bullets—review and implement every requirement/acceptance criterion in: - <a href="../../SPEC-initial-yrPublish-design-0.0.1-v001.html"><code>../../SPEC-initial-yrPublish-design-0.0.1-v001.qmd</code></a></p>
 <ol type="1">
-<li>Use <code>.qmd</code> with a YAML <code>title</code> that matches the document’s single level-1 heading (H1). (If you omit YAML, still ensure the single H1 matches what you want in the TOC.)</li>
-<li>Follow the version numbering in <a href="./DOC-GUIDE-v001.html">DOC-GUIDE-v001.qmd</a> for filenames.</li>
-<li>Use exactly one <code>#</code> (top-level) heading per document; use <code>##</code>, <code>###</code>, etc. for subsections.</li>
-<li>Do not hardcode section numbers in headings or in the text.</li>
-<li>Add <code>{#sec-id}</code> to headings you might reference; use <code>@sec-id</code> in the text to refer to them.</li>
+<li><strong>Version pinning + repo-local locking</strong>
+<ul>
+<li>Each yrPublish project must have <code>.yrPublish/yrPublish.lock</code>.</li>
+<li>During <code>yrPublish create-project</code>, yrPublish must <strong>vendor/copy</strong> the yrPublish implementation assets for the locked version into:
+<ul>
+<li><code>.yrPublish/&lt;locked-version&gt;/...</code></li>
+</ul></li>
+<li>All subsequent commands must use the pinned vendored assets.</li>
+</ul></li>
+<li><strong>Dependency isolation</strong>
+<ul>
+<li>Pin a Quarto version in <code>.yrPublish/config/quarto-version.txt</code>.</li>
+<li>Use a vendored Quarto install under <code>.yrPublish/tools/quarto/&lt;version&gt;/bin/quarto</code>.</li>
+<li>Ensure all subcommands run the vendored Quarto binary, not the global <code>quarto</code> from PATH.</li>
+</ul></li>
+<li><strong>Version reporting</strong>
+<ul>
+<li>Implement:
+<ul>
+<li><code>yrPublish version-cli</code> → report the version baked into the running executable/script (do not read the project).</li>
+<li><code>yrPublish version-project &lt;project-path&gt;</code> → read required version from <code>.yrPublish/yrPublish.lock</code>.</li>
+</ul></li>
+<li>Any project-operating subcommand should warn if <code>version-cli</code> != <code>version-project</code>.</li>
+</ul></li>
+<li><strong>Chapter numbering behavior</strong>
+<ul>
+<li>Implement:
+<ul>
+<li><code>yrPublish renumber-chapters</code> to sequentially renumber <code># yrChapterNumber &lt;n&gt;</code> comments in <code>_quarto.yml</code> using the existing v0.0.0 script logic (vendored unchanged for v0.0.1).</li>
+<li><code>yrPublish apply-chapter-numbers</code> to update <code>&lt;yrChapterNumber&gt;...&lt;/yrChapterNumber&gt;</code> inside the <code>.qmd</code> files using the existing v0.0.0 script logic (vendored unchanged for v0.0.1).</li>
+</ul></li>
+<li><code>yrPublish render</code> must automatically run <code>apply-chapter-numbers</code> before invoking Quarto.</li>
+</ul></li>
 </ol>
+</section>
+<section id="constraints" class="level3" data-number="9.1.3">
+<h3 data-number="9.1.3" class="anchored" data-anchor-id="constraints"><span class="header-section-number">9.1.3</span> Constraints</h3>
+<ul>
+<li>For v0.0.1, do <strong>not</strong> modify the v0.0.0 scripts/assets directly; treat them as unchanged resources that are copied/vendored into projects.</li>
+</ul>
+</section>
+<section id="what-to-produce-in-this-implementation-chat" class="level3" data-number="9.1.4">
+<h3 data-number="9.1.4" class="anchored" data-anchor-id="what-to-produce-in-this-implementation-chat"><span class="header-section-number">9.1.4</span> What to produce in this implementation chat</h3>
+<ul>
+<li>Code changes to add the <code>yrPublish</code> CLI (including help + <code>help &lt;subcommand&gt;</code>).</li>
+<li>The <code>create-project</code> workflow that scaffolds <code>.yrPublish/</code> with:
+<ul>
+<li><code>yrPublish.lock</code></li>
+<li>vendored/pinned yrPublish implementation assets under <code>.yrPublish/&lt;locked-version&gt;/</code></li>
+<li>vendored Quarto under <code>.yrPublish/tools/quarto/...</code></li>
+</ul></li>
+<li>Any internal helper scripts needed under the repo’s <code>.yrPublish/</code> design area (as required by the spec).</li>
+<li>Update or add tests and/or example project scaffolding as described in the spec.</li>
+</ul>
+</section>
+<section id="verification-steps-explain-how-you-verified" class="level3" data-number="9.1.5">
+<h3 data-number="9.1.5" class="anchored" data-anchor-id="verification-steps-explain-how-you-verified"><span class="header-section-number">9.1.5</span> Verification steps (explain how you verified)</h3>
+<ul>
+<li>How to test <code>yrPublish version-cli</code> and <code>yrPublish version-project</code>.</li>
+<li>How to test that <code>create-project</code> produces the expected <code>.yrPublish/</code> structure and pinned assets.</li>
+<li>How to test <code>render</code> ensures chapter numbers are applied (and how to verify runtime JS renumbering works).</li>
+</ul>
+<p>If anything is ambiguous or under-specified, ask clarifying questions before coding.</p>
 
 
 </section>
@@ -769,14 +721,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./DOC-GUIDE-v001.html" class="pagination-link" aria-label="DOC-GUIDE-v001.qmd">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">DOC-GUIDE-v001.qmd</span></span>
+      <a href="../../llmChats/00020-buildInitialSystem-answerQuestions/prompt.html" class="pagination-link" aria-label="00020-buildInitialSystem-answerQuestions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">00020-buildInitialSystem-answerQuestions</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./QUARTO-DOC-GUIDE.html" class="pagination-link" aria-label="QUARTO-DOC-GUIDE.qmd">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">QUARTO-DOC-GUIDE.qmd</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

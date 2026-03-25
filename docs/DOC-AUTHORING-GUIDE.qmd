@@ -38,6 +38,13 @@ The **repository README** is `README.md` in the project root (for GitHub). It is
 - All other sections should use `##` (level 2), `###` (level 3), and so on. Do not add a second `#` in the same file.
 - This matches Quarto book authoring practice: the first heading level defines the document’s top-level structure, and having a single `#` keeps numbering and navigation consistent when the book is built.
 
+### TOC/title labeling convention for this repo
+
+To ensure that the HTML book sidebar label and the page’s top-level heading match the identifiers you expect, use this rule:
+
+- For normal docs listed in the book (e.g. `docs/*.qmd` chapters), set the single level-1 heading to the exact `.qmd` filename (including `.qmd`).
+- For `docs/llmChats/**/prompt.qmd` and `docs/llmChats/**/prompt.md`, set the single level-1 heading to the containing folder name (the directory that holds the `prompt.*` file).
+
 ## Do not use hardcoded section numbers
 
 - **Do not** put section numbers in headings (e.g. avoid `## 2. Local development` or `### 1.1 Node.js`). Quarto will number sections automatically when the book is rendered.
@@ -73,7 +80,7 @@ The **repository README** is `README.md` in the project root (for GitHub). It is
 
 When writing or editing a doc:
 
-1. Use `.qmd` with a YAML `title`.
+1. Use `.qmd` with a YAML `title` that matches the document’s single level-1 heading (H1). (If you omit YAML, still ensure the single H1 matches what you want in the TOC.)
 2. Follow the version numbering in [DOC-GUIDE-v001.qmd](DOC-GUIDE-v001.qmd) for filenames.
 3. Use exactly one `#` (top-level) heading per document; use `##`, `###`, etc. for subsections.
 4. Do not hardcode section numbers in headings or in the text.

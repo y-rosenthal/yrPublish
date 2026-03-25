@@ -86,16 +86,20 @@ Press `Ctrl+C` to stop the preview server.
 
 ## Adding or removing chapters
 
-The book’s table of contents (TOC) on the left is defined in **`docs/_quarto.yml`** under `book.chapters`. Use the steps below so that TOC entries show the actual filenames as links and, when you have multiple versions of a doc, the most recent appears first.
+The book’s table of contents (TOC) on the left is defined in **`docs/_quarto.yml`** under `book.chapters`. Use the steps below so that TOC labels (and page H1 headings) match the conventions used in this repo, and when you have multiple versions of a doc, the most recent appears first.
 
 ### How to add a new doc
 
 1. Add the `.qmd` file (e.g. `My-New-Doc.qmd`) to `docs/`.
-2. Set the document's **YAML `title`** to the **filename** (including `.qmd`). That way the left-margin TOC will use the filename as the link text:
+2. Set the document’s single level-1 heading (`# ...`) to the identifier you want in the TOC:
+   - For normal docs (not in `llmChats/**`), use the exact `.qmd` filename (including `.qmd`).
+   - For `llmChats/**/prompt.qmd` and `llmChats/**/prompt.md`, use the containing folder name (the directory that holds `prompt.*`).
+
+   If you use a YAML header, set **`title`** to the same string as the H1 so everything stays consistent:
 
    ```yaml
    ---
-   title: "My-New-Doc.qmd"
+   title: "My-New-Doc.qmd"  # must match the H1 exactly
    ---
    ```
 

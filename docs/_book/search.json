@@ -4,9 +4,9 @@
     "href": "index.html",
     "title": "yrPublish Documentation",
     "section": "",
-    "text": "1 Intro\nWelcome to the yrPublish documentation. This book gathers the project’s specs, setup instructions, and reference material in one place. This documentation all lives in the docs folder of the yrPublish repo. The documentation is maintained as a Quarto book. To render the documentation, naviate to the docs folder and run quarto preview.\nHow to use this book\nBelow is the contents of the README.md that gets displayed on github.com Other files in this book have names that should clearly indicate what they contain.",
+    "text": "1 index.qmd\nWelcome to the yrPublish documentation. This book gathers the project’s specs, setup instructions, and reference material in one place. This documentation all lives in the docs folder of the yrPublish repo. The documentation is maintained as a Quarto book. To render the documentation, naviate to the docs folder and run quarto preview.\nHow to use this book\nBelow is the contents of the README.md that gets displayed on github.com Other files in this book have names that should clearly indicate what they contain.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Intro</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>index.qmd</span>"
     ]
   },
   {
@@ -16,7 +16,7 @@
     "section": "2.1 What is Quarto?",
     "text": "2.1 What is Quarto?\nQuarto is a publishing system that can render entire projects into structured outputs such as:\n\nWebsites\nBooks\nManuscripts\n\nIt allows for output formats of HTML, PDF, Word and other formats.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Intro</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>index.qmd</span>"
     ]
   },
   {
@@ -24,9 +24,9 @@
     "href": "index.html#what-does-this-repo-add",
     "title": "yrPublish Documentation",
     "section": "2.2 What does this repo add?",
-    "text": "2.2 What does this repo add?\nThis repo attempts to address the following limitations of Quarto (as of today, March 20, 2026). There may be additional features added in the future.\n\nQuarto books cannot have custom chapter numbers. Chapter numbers always start from 1 and are sequential. This repo adds the ability to have custom chapter numbers.\nQuarto books have “chapters”. Large books with many chapters can segment the chapters of a book among different “part”s of the book. However, there is no way to have nested parts for books that become much larger.\nOne of the goals of this project is to allow for a much deeper nesting of a hierarchical organization scheme for very large books.",
+    "text": "2.2 What does this repo add?\nThis repo attempts to address the following limitations of Quarto (as of today, March 20, 2026). There may be additional features added in the future.\n\nQuarto books cannot have custom chapter numbers. Chapter numbers always start from 1 and are sequential. This repo adds the ability to have custom chapter numbers.\nQuarto books have “chapters”. Large books with many chapters can segment the chapters of a book among different “part”s of the book. However, there is no way to have nested parts for books that become much larger.\nOne of the goals of this project is to allow for a much deeper nesting of a hierarchical organization scheme for very large “books” or collections of material.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Intro</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>index.qmd</span>"
     ]
   },
   {
@@ -34,9 +34,9 @@
     "href": "index.html#more-about-yrpublish",
     "title": "yrPublish Documentation",
     "section": "2.3 More about yrPublish",
-    "text": "2.3 More about yrPublish\nIn general yrPublish adds several assets and imposes some constraints on how to create publishable content. There are some Bash scripts, custom css and javascript etc that are used with this system.\nThe general workflow to render a book built with this system is:\n\nCreate the repo using the yrPublish.sh create-project my-project to create a new repo. This is similar to the similar quarto command.\nThe yrPublish.sh command creates the folder structure and adds any files or assets that are needed for a new project.\nContent creators add content in the same general way that they would for quarto files. This includes editing .qmd files, creating a _quarto.yml file, etc. However, content editors that are using the yrPublish system should make sure to adhere to the yrPublish guidelines. For example, if a content creator wants custom chapter numbers for their book they should follow the directions in the docs for yrPublish to do so. Currently this includes\n\nediting the _quarto.yml file with special directives to record the custom chapter numbers\nrunning some yrPublish specific scripts prior to rendering the project with the quarto cli tools. The entire process is documented in the yrPublish docs folder.",
+    "text": "2.3 More about yrPublish\nIn general yrPublish adds several assets and imposes some constraints on how to create publishable content. There are some Bash scripts, custom css and javascript etc that are used with this system.\nyrPublish is currently envisioned as a CLI tool with a single command, “yrPublish” with possibly numerous “sub commands”.\nThe general workflow to render a book built with this system is:\n\nCreate the repo using the yrPublish create-project my-project to create a new repo. This is similar to the similar quarto command. This command creates the folder structure and adds any files or assets that are needed for a new project.\nContent creators add content in the same general way that they would for quarto files. This includes editing .qmd files, creating a _quarto.yml file, etc. However, content editors that are using the yrPublish system should make sure to adhere to the yrPublish guidelines. For example, if a content creator wants custom chapter numbers for their book they should follow the directions in the docs for yrPublish to do so. Currently this includes\n\nediting the _quarto.yml file with special directives to record the custom chapter numbers\nrunning some yrPublish specific scripts prior to rendering the project with the quarto cli tools. The entire process is documented in the yrPublish docs folder.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Intro</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>index.qmd</span>"
     ]
   },
   {
@@ -44,9 +44,9 @@
     "href": "index.html#documentation-for-yrpublish",
     "title": "yrPublish Documentation",
     "section": "2.4 Documentation for yrPublish",
-    "text": "2.4 Documentation for yrPublish\nThe docs folder in this repo contains a quarto book with the documentation for this system. It also includes any specs for updates to the yrPublish system itself.",
+    "text": "2.4 Documentation for yrPublish\nThe docs folder in this repo contains a quarto book with the documentation for this system. It also includes any specs for updates to the yrPublish system itself.\nAI systems that are editing this repo should make sure to keep the documents in the docs folder as well as this README.md file up to date with all changes that they make.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Intro</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>index.qmd</span>"
     ]
   },
   {
@@ -54,9 +54,9 @@
     "href": "index.html#goal-is-to-be-a-quarto-compliant-as-possible",
     "title": "yrPublish Documentation",
     "section": "2.5 Goal is to be a quarto compliant as possible",
-    "text": "2.5 Goal is to be a quarto compliant as possible\nNote that the Quarto system is under ongoing development and may add features in the future that yrPublish had already added.\nIf/when that happens the goal of this system is prefer yrPublish projects to use the native Quarto features as much as possible. The goal of yrPublish is NOT to reinvent the wheel (at least not yet) but to add features to Quarto where they are missing.",
+    "text": "2.5 Goal is to be a quarto compliant as possible\nNote that the Quarto system is under ongoing development and may add features in the future that yrPublish had already added.\nIf/when that happens the goal of this system is to prefer yrPublish projects to use the native Quarto features as much as possible. The goal of yrPublish is NOT to reinvent the wheel (at least not yet) but to add features to Quarto where they are missing.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Intro</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>index.qmd</span>"
     ]
   },
   {
@@ -64,7 +64,18 @@
     "href": "DOC-GUIDE-v001.html",
     "title": "2  DOC-GUIDE-v001.qmd",
     "section": "",
-    "text": "2.1 Reading the docs as an HTML book\nThis document describes the various types of documentation files and the version numbering scheme.\nThe documentation in docs/ can be rendered as a single Quarto book (HTML) for easier reading. To build or rebuild the book after documentation changes, see QUARTO-DOC-GUIDE.qmd. That guide explains how to install the Quarto tools (if needed) and how to regenerate the book. The built book is in docs/_book/; open docs/_book/index.html in a browser to read it.\nIn the book, the sidebar (table of contents) lists each chapter, and the page title is usually the same as the document’s heading or filename. Exception: the chapter that displays the repository README is built from Overview.qmd, which only includes README.md. In the sidebar it appears as README; on the webpage, the top-level heading is taken directly from README.md (e.g. “yrS3 — Tutorial & Testing System”), not from the Overview filename. Edit only README.md to change that content; the book updates automatically when rebuilt.",
+    "text": "2.1 Reading the docs as an HTML book\nThis document describes the various types of documentation files and the version numbering scheme.\nThe documentation in docs/ can be rendered as a single Quarto book (HTML) for easier reading. To build or rebuild the book after documentation changes, see QUARTO-DOC-GUIDE.qmd. That guide explains how to install the Quarto tools (if needed) and how to regenerate the book. The built book is in docs/_book/; open docs/_book/index.html in a browser to read it.\nIn the book, the sidebar (table of contents) lists each chapter, and the page title is usually the same as the document’s heading (H1) or filename. To keep the TOC stable in this repo, follow these conventions for chapters listed in docs/_quarto.yml:\nException: the chapter that displays the repository README is built from Overview.qmd, which only includes README.md. In the sidebar it appears as README; on the webpage, the top-level heading is taken directly from README.md (e.g. “yrS3 — Tutorial & Testing System”), not from the Overview filename. Edit only README.md to change that content; the book updates automatically when rebuilt.",
+    "crumbs": [
+      "Guide to the documentation",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>DOC-GUIDE-v001.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "DOC-GUIDE-v001.html#reading-the-docs-as-an-html-book",
+    "href": "DOC-GUIDE-v001.html#reading-the-docs-as-an-html-book",
+    "title": "2  DOC-GUIDE-v001.qmd",
+    "section": "",
+    "text": "For normal docs under docs/, set the single level-1 heading (# ...) to the exact .qmd filename (including the .qmd extension).\nFor llmChats/**/prompt.qmd and llmChats/**/prompt.md, set the single level-1 heading (# ...) to the containing folder name (the directory that holds the prompt.* file).",
     "crumbs": [
       "Guide to the documentation",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>DOC-GUIDE-v001.qmd</span>"
@@ -152,7 +163,7 @@
     "href": "DOC-AUTHORING-GUIDE.html#one-top-level-heading-per-document-quarto-book-standard",
     "title": "3  DOC-AUTHORING-GUIDE.qmd",
     "section": "4.4 One top-level heading per document (Quarto book standard)",
-    "text": "4.4 One top-level heading per document (Quarto book standard)\n\nEach document should have exactly one level-1 heading (#). That heading is the document’s main title (or the main title is set in the YAML title and the single # is the same or a short form).\nAll other sections should use ## (level 2), ### (level 3), and so on. Do not add a second # in the same file.\nThis matches Quarto book authoring practice: the first heading level defines the document’s top-level structure, and having a single # keeps numbering and navigation consistent when the book is built.",
+    "text": "4.4 One top-level heading per document (Quarto book standard)\n\nEach document should have exactly one level-1 heading (#). That heading is the document’s main title (or the main title is set in the YAML title and the single # is the same or a short form).\nAll other sections should use ## (level 2), ### (level 3), and so on. Do not add a second # in the same file.\nThis matches Quarto book authoring practice: the first heading level defines the document’s top-level structure, and having a single # keeps numbering and navigation consistent when the book is built.\n\n\n4.4.1 TOC/title labeling convention for this repo\nTo ensure that the HTML book sidebar label and the page’s top-level heading match the identifiers you expect, use this rule:\n\nFor normal docs listed in the book (e.g. docs/*.qmd chapters), set the single level-1 heading to the exact .qmd filename (including .qmd).\nFor docs/llmChats/**/prompt.qmd and docs/llmChats/**/prompt.md, set the single level-1 heading to the containing folder name (the directory that holds the prompt.* file).",
     "crumbs": [
       "Guide to the documentation",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>DOC-AUTHORING-GUIDE.qmd</span>"
@@ -196,7 +207,7 @@
     "href": "DOC-AUTHORING-GUIDE.html#summary-checklist",
     "title": "3  DOC-AUTHORING-GUIDE.qmd",
     "section": "4.8 Summary checklist",
-    "text": "4.8 Summary checklist\nWhen writing or editing a doc:\n\nUse .qmd with a YAML title.\nFollow the version numbering in DOC-GUIDE-v001.qmd for filenames.\nUse exactly one # (top-level) heading per document; use ##, ###, etc. for subsections.\nDo not hardcode section numbers in headings or in the text.\nAdd {#sec-id} to headings you might reference; use @sec-id in the text to refer to them.",
+    "text": "4.8 Summary checklist\nWhen writing or editing a doc:\n\nUse .qmd with a YAML title that matches the document’s single level-1 heading (H1). (If you omit YAML, still ensure the single H1 matches what you want in the TOC.)\nFollow the version numbering in DOC-GUIDE-v001.qmd for filenames.\nUse exactly one # (top-level) heading per document; use ##, ###, etc. for subsections.\nDo not hardcode section numbers in headings or in the text.\nAdd {#sec-id} to headings you might reference; use @sec-id in the text to refer to them.",
     "crumbs": [
       "Guide to the documentation",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>DOC-AUTHORING-GUIDE.qmd</span>"
@@ -262,7 +273,7 @@
     "href": "QUARTO-DOC-GUIDE.html#adding-or-removing-chapters",
     "title": "4  QUARTO-DOC-GUIDE.qmd",
     "section": "4.5 Adding or removing chapters",
-    "text": "4.5 Adding or removing chapters\nThe book’s table of contents (TOC) on the left is defined in docs/_quarto.yml under book.chapters. Use the steps below so that TOC entries show the actual filenames as links and, when you have multiple versions of a doc, the most recent appears first.\n\n4.5.1 How to add a new doc\n\nAdd the .qmd file (e.g. My-New-Doc.qmd) to docs/.\nSet the document’s YAML title to the filename (including .qmd). That way the left-margin TOC will use the filename as the link text:\n---\ntitle: \"My-New-Doc.qmd\"\n---\nIn docs/_quarto.yml, add the file under the right part in book.chapters. Order matters: list items in the order you want them in the TOC:\nchapters:\n  - part: \"Reference\"\n    chapters:\n      - QUESTION-FORMAT-0.0.1.qmd\n      - SETUP-0.0.1-v001.qmd\n      - My-New-Doc.qmd   # new file\nWhen there are multiple versions of the same document (e.g. PRD-0.0.1-v003.qmd, PRD-0.0.1-v002.qmd, PRD-0.0.1-v001.qmd), list them with the most recent version at the top in _quarto.yml. So the newest PRD comes first, then older ones:\n- part: \"PRD\"\n  chapters:\n    - PRD-0.0.1-v003.qmd   # most recent first\n    - PRD-0.0.1-v002.qmd\n    - PRD-0.0.1-v001.qmd\nRun quarto render docs (or quarto render from inside docs/) again.\n\nTo remove a chapter, delete or comment out its entry in _quarto.yml and re-render.",
+    "text": "4.5 Adding or removing chapters\nThe book’s table of contents (TOC) on the left is defined in docs/_quarto.yml under book.chapters. Use the steps below so that TOC labels (and page H1 headings) match the conventions used in this repo, and when you have multiple versions of a doc, the most recent appears first.\n\n4.5.1 How to add a new doc\n\nAdd the .qmd file (e.g. My-New-Doc.qmd) to docs/.\nSet the document’s single level-1 heading (# ...) to the identifier you want in the TOC:\n\nFor normal docs (not in llmChats/**), use the exact .qmd filename (including .qmd).\nFor llmChats/**/prompt.qmd and llmChats/**/prompt.md, use the containing folder name (the directory that holds prompt.*).\n\nIf you use a YAML header, set title to the same string as the H1 so everything stays consistent:\n---\ntitle: \"My-New-Doc.qmd\"  # must match the H1 exactly\n---\nIn docs/_quarto.yml, add the file under the right part in book.chapters. Order matters: list items in the order you want them in the TOC:\nchapters:\n  - part: \"Reference\"\n    chapters:\n      - QUESTION-FORMAT-0.0.1.qmd\n      - SETUP-0.0.1-v001.qmd\n      - My-New-Doc.qmd   # new file\nWhen there are multiple versions of the same document (e.g. PRD-0.0.1-v003.qmd, PRD-0.0.1-v002.qmd, PRD-0.0.1-v001.qmd), list them with the most recent version at the top in _quarto.yml. So the newest PRD comes first, then older ones:\n- part: \"PRD\"\n  chapters:\n    - PRD-0.0.1-v003.qmd   # most recent first\n    - PRD-0.0.1-v002.qmd\n    - PRD-0.0.1-v001.qmd\nRun quarto render docs (or quarto render from inside docs/) again.\n\nTo remove a chapter, delete or comment out its entry in _quarto.yml and re-render.",
     "crumbs": [
       "Guide to the documentation",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>QUARTO-DOC-GUIDE.qmd</span>"
@@ -282,67 +293,331 @@
   {
     "objectID": "BackgroundAndFeatures-0.0.1-v001.html",
     "href": "BackgroundAndFeatures-0.0.1-v001.html",
-    "title": "5  Pre-yrPublish Description of customized Quarto book rendering system",
+    "title": "5  BackgroundAndFeatures-0.0.1-v001.qmd",
     "section": "",
     "text": "5.1 Background\nThe origins of the yrPublish system grew out of my working with the Quarto system and creating some customizations for myself. In this document I try to capture the cusomizations that I created and used across several different quaro projects that I wrote, maintain and continue to develop.\nI have been creating several Quarto “book” projects that I render to HTML. Most of these are to support the classes that I teach. Some of these “books” have gotten quite large. I add material pretty regularly and these books gorw in size dynamically as time goes on. I keep the source code checked into git/github.\nFor most of my books I have a github repo whose name ends in “Src”, e.g. myBookSrc. I have another github repo with the same base name, but that does NOT have the Src suffix, eg myBook. The Src repo contains the source code for the repo (mostly Quarto .qmd files). When I’m ready to publish the next version of the book to the Internet, I render the Src repo with Quarto. I then copy the HTMl/css/javascript and other rendered assets to my repo that does not have the Src extension.\nSo far, I have been hosting the rendered books in Github and serving them via github Pages. Sometimes I have more than one version of the book that I host at different github Pages sites. For example\nOf couse the rendered versions of the books can be hosted anywhere, not just github Pages. However, github Pages is convenient for me for now.",
     "crumbs": [
       "Design documents",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Pre-yrPublish Description of customized Quarto book rendering system</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>BackgroundAndFeatures-0.0.1-v001.qmd</span>"
     ]
   },
   {
     "objectID": "BackgroundAndFeatures-0.0.1-v001.html#background",
     "href": "BackgroundAndFeatures-0.0.1-v001.html#background",
-    "title": "5  Pre-yrPublish Description of customized Quarto book rendering system",
+    "title": "5  BackgroundAndFeatures-0.0.1-v001.qmd",
     "section": "",
     "text": "rnotesSrc is a repo that contains the source code for a book I wrote about R.\nrnotes is a repo that contains just the rendered version of the book. I host access to this book via github pages at https://y-rosenthal.github.io/rnotes\nrnotesLatest is another github repo where I host the bleeding edge version of the rendered rnotesSrc book.",
     "crumbs": [
       "Design documents",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Pre-yrPublish Description of customized Quarto book rendering system</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>BackgroundAndFeatures-0.0.1-v001.qmd</span>"
     ]
   },
   {
     "objectID": "BackgroundAndFeatures-0.0.1-v001.html#ai-assisted-development",
     "href": "BackgroundAndFeatures-0.0.1-v001.html#ai-assisted-development",
-    "title": "5  Pre-yrPublish Description of customized Quarto book rendering system",
+    "title": "5  BackgroundAndFeatures-0.0.1-v001.qmd",
     "section": "5.2 AI assisted development",
     "text": "5.2 AI assisted development\nI am using AI to help me develop the yrPublish product. Therefore I have structured this repo in a way that I think best aids AI in helping me.\n\n5.2.1 docs folder\nAll documentation for the system, including user guides, as well as development documentation such as SPEC files are located in the docs folder. The docs are generally Quarto .qmd files and the entire docs folder is rendered as a “plain” Quarto book (i.e. not a yrPublish rendered book).\n\n\n5.2.2 sampleBooks folder\nWhile developing this repo I thought it would be helpful for the AI to have access to the actual code from some of the book repos that I have been developing. I started with just one, so as not to overwhelm the AI. This one book is located in sampleBooks/DataManagementUsingRSrc. This has the .git folder for the repo in it also so that if desired, the AI can review the git history for that repo.",
     "crumbs": [
       "Design documents",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Pre-yrPublish Description of customized Quarto book rendering system</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>BackgroundAndFeatures-0.0.1-v001.qmd</span>"
     ]
   },
   {
     "objectID": "BackgroundAndFeatures-0.0.1-v001.html#for-large-books-i-currently-use-the-quarto-part-concept",
     "href": "BackgroundAndFeatures-0.0.1-v001.html#for-large-books-i-currently-use-the-quarto-part-concept",
-    "title": "5  Pre-yrPublish Description of customized Quarto book rendering system",
+    "title": "5  BackgroundAndFeatures-0.0.1-v001.qmd",
     "section": "5.3 For large books I currently use the Quarto “part” concept",
     "text": "5.3 For large books I currently use the Quarto “part” concept\nFor larger books, I use the quarto “part” concept to segment the book for easier navigation. For example these are some books that I created: https://y-rosenthal.github.io/DataManagementUsingR/ https://y-rosenthal.github.io/excelNotes/ https://y-rosenthal.github.io/rnotesLatest/ (see screen shots)\n\n5.3.1 -v00n version numbers\nOn many of my files, I include a “-v00N” version number that I increment when I create a new version of the file. I started using this system before I started to use git. However, even though I started to use git I find that it is still helpful sometimes to have a version number directly in the name of a file. In that way, if I use the same file in different books, I can very easily see which version of the file I’m using. For example, I am currently up to v004 for the yrChapterNumber Bash script. Therefore, the actual name of the script that I would run would be “yrChapterNumber-v004.sh”. For Bash scripts and utilities, I generally only increment the -v00N number when I make breaking changes. So I might checking numerous non-breaking changes to yrChapterNumber-v004 (e.g. changing the comments).\nFor .qmd files I have a bunch of -v00N files from before I started using git. Now that I am using git, I just kept the same filenames. Sometimes, I might create a new file with a -v00N extension even though I’m using git. The motivation is often that I want more than one versin of a file to be immediately available in the repo for convenience purposes.\nThis may not be the best system but it works for me now. It’s a system with very loose rules. I just want you to know what the -v00N endings on many files are in my repos.",
     "crumbs": [
       "Design documents",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Pre-yrPublish Description of customized Quarto book rendering system</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>BackgroundAndFeatures-0.0.1-v001.qmd</span>"
     ]
   },
   {
     "objectID": "BackgroundAndFeatures-0.0.1-v001.html#custom-chapter-numbers-enabled-via-css-and-javascript-at-runtime",
     "href": "BackgroundAndFeatures-0.0.1-v001.html#custom-chapter-numbers-enabled-via-css-and-javascript-at-runtime",
-    "title": "5  Pre-yrPublish Description of customized Quarto book rendering system",
+    "title": "5  BackgroundAndFeatures-0.0.1-v001.qmd",
     "section": "5.4 Custom chapter numbers (enabled via css and javascript at runtime)",
     "text": "5.4 Custom chapter numbers (enabled via css and javascript at runtime)\n\n5.4.1 motivation\nI often modify the books in the middle of my teaching a course. Sometimes, I might add a chapter in the middle of the book which by default would cause the later chapter numbers to be incremented. I didn’t like that since I didn’t want to change the chapter numbers in the book in the middle of a course after students had already become familiar with the book’s layout. My thought was to label a new chapter that appears after chapter 12 for example, not as chapter 13, but rather as chapter 12b. In that way I could keep all existing chapter numbers. Unfortunately, Quarto doesn’t seem to have a standard way to have custom chapter names. Therefore I devised my own solution using custom markup and Javascript.\n\n\n5.4.2 custom markup\nI added a  element to every first level heading in every page in the book. I then also added custom comments to the _quarto.yml at the end of every chapter line in the yml file that shows the preferred chapter number. For example, the following might be in a _quarto.yml. It shows the chapter numbers I want after # yrChapterNumber. In the following example (there is no actual book with the contents of this example), I might have had a book with 5 chapters (that didn’t have the emptyTags.qmd chapter). Suppose, I would want to add the emptyTags.qmd chapter in the middle of the semester. I would want the chapter number to be 1b and keep the rest of the chapter numbers the same.\n- part: Intro to HTML\n  chapters:\n  - introToElements.qmd      # yrChapterNumber 1\n  - emptyTags.qmd            # yrChapterNumber 1b\n  - pageStructure.qmd        # yrChapterNumber 2\n  - tableTags.qmd           # yrChapterNumber  3\n\n- part: Intro to CSS\n  chapters:\n  - styleTag.qmd            # yrChapterNumber  4\n  - basicSelectors.qmd      # yrChapterNumber  5\nTo support this, all .qmd files would have single top level # header at the top of the file. The text of the # header in a .qmd file becomes the text displayed in the table of contents (TOC) on the left of the Quarto book website. To support custom chapter numbers I added a  element in the single top level # heading in all .qmd files in the Quarto book. I also created a Bash script, yrChapterNumber.sh, that gets the preferred chapter numbers from the _quarto.yml and populates the  elements with the correct chapter numbers. I would run this bash script prior to rendering the book. So for exmple after running the yrChapterNumber.sh script I might have the following:\nThe first line of the “introToElements.qmd” file might ha: # 1.  Introduction to HTML element\nThe first line of the “emptyTags.qmd” might be: # 1b.  Empty tableTags\nThe first line of the pageStructure.qmd file might be: # 2.  Structure of a valid HTML page\netc.\n\n\n5.4.3 Bash scripts\nI have the following bash scripts:\n\nyrChapterNumber.sh - described above in the previous section\nyrRenumberChapter.sh :\nSuppose for the next version of the book I want to start again with sequential chapter numbers. I would run the command yrRenumberChapters _quarto.yml. The script with change the numbers in the #yrChapterNumber comments in the _quarto.yml to be sequestial numbers, e.g. 1,2,3,4,5,6 instead of 1,1b,2,3,4,5 that was there before.\nyrBuildQuarto.sh\nI have a custom build script to support any other custom processing that I need to do to render the Quarto. For example at some point I think I needed to have the _quarto.yml file in the _book folder that contains the rendered website. The _quarto.yml is processed at runtime by custom javascript (in file yrstuff-v001.js)\n\nI believe that\n\n\n\n\n5.4.4 suppress original chapter numbers with custom css\nThe original Quarto rendered chapter numbers are suppressed from being displayed with the custom css in the file yrStyles-main-v0001.css, which currently contains the following:\n.chapter-number {\n    display: none;\n}\n\nyrchapternumber { font-size: 99%; color: red; }\n\n.yrAppendixChapterNumber {\n    display: none;\n}\n\n\n5.4.5 Custom javascript\nI have custom javascript that renumbers the chapters from the numbers that Quarto renders into the book, into the the numbers that are in the  elements. (Note that appendices are treated a little differently due to how quarto renders appendix numbers and names).\nI’ll tell you the truth - I don’t remember exactly how the following comes into play in the custom chapter numbering system system. However, it all works and I’m afraid to change it. Perhaps you could help me remember and understand how I designed this or perhaps you could point out some things that could be improved?\nThe javascript code in question in the file yrstuff-v001.js I believe it is part of this system. It parses the _quarto.yml file to map the new chapter numbers to the names of the qmd/html files. For this reason the _quarto.yml file must be in the rendered website’s folder (i.e. it must be copied to the _book folder at render time). This is accomplished by the R program, copy_quartoYml_to_bookFolder-v001.R program that is referenced in the pre-render: section in _quarto.yml. Note that the _quarto.yml file is also in the resources: section of the _quarto.yml file - I’m not sure if that is truly necessary or not - I don’t recall.\nIn the post-render: section of the _quarto.yml, I am also running an R script named yrZipQmdFiles.R that creates a .zip file from each .qmd file and puts it in the _book directory. I’m not 100% sure why I did that. If you can figure it out, let me know … I think that I might have wanted to add a link to each rendered HTML page that allows for the download of the source for the page. However, I don’t think I actually implemented that part - again I’m not sure - help me figure this out please …",
     "crumbs": [
       "Design documents",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Pre-yrPublish Description of customized Quarto book rendering system</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>BackgroundAndFeatures-0.0.1-v001.qmd</span>"
     ]
   },
   {
     "objectID": "BackgroundAndFeatures-0.0.1-v001.html#open-questions",
     "href": "BackgroundAndFeatures-0.0.1-v001.html#open-questions",
-    "title": "5  Pre-yrPublish Description of customized Quarto book rendering system",
+    "title": "5  BackgroundAndFeatures-0.0.1-v001.qmd",
     "section": "5.5 Open questions",
     "text": "5.5 Open questions\nI have a few questions. I hope the AI can help me figure this out.\nQUESTIONS:\nThe following are the first few lines of my _quarto.yml file\nproject:\n  type: book\n  output-dir: _book\n  pre-render: copy_quartoYml_to_bookFolder-v001.R\n  post-render: Rscript yrZipQmdFiles.R\n  resources:\n    - _quarto.yml\n    - yrNocacheHeaders-v001.html\n    - yrstuff-v001.js\n    - assignment-api-0000100-weatherDataApi-v002.qmd.zip\n    - assignment-api-0000100-weatherDataApi-v001.qmd.zip\n  render:\n    - \"*.qmd\"  # Ensures all .qmd files are rendered, even if not in `chapters`\n    - \"assignment-api-0000100-weatherDataApi-v001.qmd\"  # Ensure the old version gets rendered\n\nwhy did I use the Rscript command only in the post-render section but not in the pre-render section?\nIs there any reference to or use of the .zip files that I create in the post-render step in the finished rendered website?\nWhy do I include _quarto.yml in the resources: section and also copy the _quarto.yml file to the _book folder in the pre-render: section\nI’m not sure why I included the following. I think it was something I did when I was in a rush to get something working. If you see any particular reason why this is necessary, let me know. I don’t think this is necessary for the general approach to building these types of books.\nrender:\n  - \"*.qmd\"  # Ensures all .qmd files are rendered, even if not in `chapters`\n  - \"assignment-api-0000100-weatherDataApi-v001.qmd\"  # Ensure the old version gets rendered",
     "crumbs": [
       "Design documents",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Pre-yrPublish Description of customized Quarto book rendering system</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>BackgroundAndFeatures-0.0.1-v001.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "BackgroundAndFeatures-0.0.1-v001.html#cursor-ai-answers-from-cursors-ai",
+    "href": "BackgroundAndFeatures-0.0.1-v001.html#cursor-ai-answers-from-cursors-ai",
+    "title": "5  BackgroundAndFeatures-0.0.1-v001.qmd",
+    "section": "5.6 Cursor AI answers (from Cursor’s AI)",
+    "text": "5.6 Cursor AI answers (from Cursor’s AI)\n\n5.6.1 Why did I use Rscript in post-render but not in pre-render?\nCursor AI answer: Quarto’s project pre-render / post-render scripts are supported for multiple languages (including R) via Quarto’s project-script mechanism. So the “correctness” generally does not depend on whether the entry is written as bare somefile.R or as an explicit Rscript somefile.R invocation. It’s most likely historical/style/convenience: pre-render: copy_quartoYml_to_bookFolder-v001.R is already valid, and post-render: Rscript yrZipQmdFiles.R is effectively just making the interpreter explicit.\n\n\n5.6.2 Is there any reference to or use of the .zip files created in post-render?\nCursor AI answer: In your described setup, the .zip files are created into _book and are listed under resources: in _quarto.yml, which means they are intended to be published as static assets. However, that does not automatically mean the existing site UI/JS references them. In most implementations of this pattern, the zips are used for “downloadable source” (or archival) even if you haven’t yet added a link/button per page. To confirm actual usage, you’d look for references to those zip filenames in templates/HTML/JS; based on the repo structure here, the published assets exist, but the linkage may be unimplemented.\n\n\n5.6.3 Why include _quarto.yml in resources: and also copy _quarto.yml to _book in pre-render?\nCursor AI answer: resources: is a Quarto mechanism for shipping static files into the output directory, so including _quarto.yml there ensures it becomes available in the built output. Separately, your pre-render step copies _quarto.yml into _book so runtime client-side JS (like yrstuff-v001.js) can fetch _quarto.yml from the final site. Keeping both is likely redundant: one mechanism may have been added to guarantee a working behavior during experimentation, or to ensure timing/paths matched what the JS fetch expects. Either way, the functional goal is the same: make _quarto.yml reliably available under _book/ at runtime.\n\n\n5.6.4 Why include render: - \"*.qmd\" and also explicitly list one older .qmd?\nCursor AI answer: For type: book, the chapters: list controls what Quarto includes in navigation, but Quarto may still skip rendering some files depending on project configuration and incremental rendering. render: \"*.qmd\" is a way to force rendering of all .qmd files (even if they are not in chapters). The additional explicit line for an older version (e.g. assignment-api-...-v001.qmd) is typically for “keep the old version” / “ensure it still renders” behavior: it forces the old version to be rendered even if later you switched chapters: or removed it from the main book structure.",
+    "crumbs": [
+      "Design documents",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>BackgroundAndFeatures-0.0.1-v001.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "SPEC-initial-yrPublish-design-0.0.1-v001.html",
+    "href": "SPEC-initial-yrPublish-design-0.0.1-v001.html",
+    "title": "6  SPEC-initial-yrPublish-design-0.0.1-v001.qmd",
+    "section": "",
+    "text": "6.1 Purpose\nDesign yrPublish v0.0.1 as a thin bash CLI wrapper around Quarto that recreates the behavior of the pre-yrPublish toolset (yrPublish v0.0.0).\nThis version focuses on preserving existing custom behavior (custom chapter numbering via yrChapterNumber, renumbering via yrRenumberChapters, and the runtime DOM renumbering via yrstuff-v001.js).\nThis design is grounded in the pre-yrPublish working Quarto project found at sampleBooks/DataManagementUsingRSrc/DataManagementUsingRSrc-v0.0.0/, which contains the v0.0.0 scripts/assets we vendor unchanged into new yrPublish projects for v0.0.1.",
+    "crumbs": [
+      "Design documents",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>SPEC-initial-yrPublish-design-0.0.1-v001.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "SPEC-initial-yrPublish-design-0.0.1-v001.html#scope",
+    "href": "SPEC-initial-yrPublish-design-0.0.1-v001.html#scope",
+    "title": "6  SPEC-initial-yrPublish-design-0.0.1-v001.qmd",
+    "section": "6.2 Scope",
+    "text": "6.2 Scope\nIn scope:\n\nA single bash CLI entrypoint named yrPublish with a small set of subcommands.\nA project scaffolding workflow: yrPublish create-project ...\nRender/preview workflows that pin and use the correct Quarto and yrPublish tooling.\nChapter-number workflows:\n\nrenumber sequentially in _quarto.yml\napply chapter numbers into .qmd files\nensure chapter-number display is corrected at runtime in the generated HTML\n\nVersion pinning:\n\nrecord which yrPublish version the target project expects\nvendor/copy the matching yrPublish tooling into the project repo\n\nA version-reporting interface:\n\nshow the running yrPublish executable version\nshow the target project’s locked yrPublish version\nwarn on mismatch\n\nDocumentation of example/test strategy (describe-only in this spec; no scaffolding yet).\n\nOut of scope:\n\nRewriting the existing v0.0.0 scripts/assets in-place.\nImplementing v0.0.2 enhancements (these may change how scripts are managed).",
+    "crumbs": [
+      "Design documents",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>SPEC-initial-yrPublish-design-0.0.1-v001.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "SPEC-initial-yrPublish-design-0.0.1-v001.html#functional-requirements",
+    "href": "SPEC-initial-yrPublish-design-0.0.1-v001.html#functional-requirements",
+    "title": "6  SPEC-initial-yrPublish-design-0.0.1-v001.qmd",
+    "section": "6.3 Functional Requirements",
+    "text": "6.3 Functional Requirements\n\n6.3.1 Non-negotiable checklist (v0.0.1)\nThese items must all be implemented for yrPublish v0.0.1 to be considered complete:\n\nProvide a single bash CLI named yrPublish with the required subcommands (including help / help &lt;subcommand&gt;).\nImplement version pinning and repo-local locking via .yrPublish/yrPublish.lock.\nDuring yrPublish create-project, vendor/copy the pinned yrPublish implementation assets into .yrPublish/&lt;locked-version&gt;/....\nImplement dependency isolation by pinning Quarto in .yrPublish/config/quarto-version.txt and using a vendored Quarto install under .yrPublish/tools/quarto/&lt;version&gt;/bin/quarto.\nImplement yrPublish version-cli (baked into the running executable/script) and yrPublish version-project &lt;project-path&gt; (read from the project’s .yrPublish/yrPublish.lock).\nWarn whenever the running yrPublish tool version and the project-locked yrPublish version differ (for any subcommand that operates on a project).\nImplement chapter-number workflows:\n\nyrPublish renumber-chapters updates # yrChapterNumber &lt;n&gt; comments in _quarto.yml sequentially.\nyrPublish apply-chapter-numbers updates &lt;yrChapterNumber&gt;...&lt;/yrChapterNumber&gt; in .qmd files.\nyrPublish render automatically runs apply-chapter-numbers before invoking Quarto.\n\nTreat the v0.0.0 scripts/assets as unchanged resources: do not edit them in-place for v0.0.1; only vendor/copy them.\n\n\n\n6.3.2 Command surface\nyrPublish is a bash CLI with subcommands (and help for each subcommand).\nRequired subcommands/options:\n\nyrPublish create-project &lt;project-name&gt; [--type book|website|...]\nyrPublish render [&lt;project-path&gt;]\nyrPublish preview [&lt;project-path&gt;]\nyrPublish renumber-chapters [&lt;project-path&gt;]\nyrPublish apply-chapter-numbers [&lt;project-path&gt;]\nyrPublish help\nyrPublish help &lt;subcommand&gt;\n\nVersion/reporting subcommands (new in v0.0.1):\n\nyrPublish version-cli\n\nReports the version baked into the running yrPublish executable/script.\n\nyrPublish version-project [&lt;project-path&gt;]\n\nReports the yrPublish version required by the target project by reading .yrPublish/yrPublish.lock.\n\n\nVersion consistency behavior:\n\nyrPublish version-cli always works without probing the target repo.\nyrPublish version-project fails clearly if the target project has no .yrPublish/yrPublish.lock.\nAny yrPublish subcommand that operates on a project should warn if:\n\nversion-cli (running tool version) differs from\nversion-project (locked project-required version).\n\n\n\n\n6.3.3 Pinned assets and v0.0.0 reuse (unchanged resources)\nAll supporting tools/assets used to implement yrPublish v0.0.1 are to be placed in a .yrPublish/ folder at the root of each project created by yrPublish.\nFor v0.0.1, the v0.0.0 code is reused unchanged by vendoring it into the project for the locked version.\nThe v0.0.0 scripts/assets to vendor (copied unchanged) include:\n\nyrChapterNumber-v004.sh\nyrRenumberChapters-v005.sh\nyrBuildQuarto-v004.sh\ncopy_quartoYml_to_bookFolder-v001.R\nyrZipQmdFiles.R\nyrstuff-v001.js\nyrStyles-main-v001.css\nyrNocacheHeaders-v001.html\n\n\n\n6.3.4 Render pipeline behavior\nyrPublish render must apply chapter numbers before calling Quarto, and the generated site must run runtime renumbering at view time.\nProposed pipeline:\n\nyrPublish apply-chapter-numbers (so .qmd files contain updated &lt;yrChapterNumber&gt;...&lt;/yrChapterNumber&gt; content)\nCall the pinned local Quarto binary to perform the render\nRely on the project’s _quarto.yml hooks:\n\npre-render to ensure _quarto.yml is copied into _book/ (so the runtime JS can fetch it)\npost-render to create .qmd.zip artifacts in _book/\n\nRuntime JS (yrstuff-v001.js) overwrites displayed chapter/section numbering using the mapping found in _book/_quarto.yml.\n\nMermaid overview:\nflowchart LR\n  User[User runs yrPublish render] --&gt; Apply[apply-chapter-numbers]\n  Apply --&gt; Render[quarto render]\n  Render --&gt; PreRender[pre-render: copy_quartoYml_to_bookFolder]\n  PreRender --&gt; PostRender[post-render: yrZipQmdFiles]\n  Render --&gt; Browser[client JS: yrstuff-v001 renumbers display]\n\n\n6.3.5 Applying chapter numbers\nyrPublish apply-chapter-numbers must:\n\nParse _quarto.yml chapter mappings that use # yrChapterNumber &lt;n&gt; comments.\nUpdate the corresponding .qmd files’ &lt;yrChapterNumber&gt;...&lt;/yrChapterNumber&gt; elements.\n\nHelp text requirement:\n\nThe help for apply-chapter-numbers must clearly state that this step is also run automatically during render.",
+    "crumbs": [
+      "Design documents",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>SPEC-initial-yrPublish-design-0.0.1-v001.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "SPEC-initial-yrPublish-design-0.0.1-v001.html#version-pinning-and-repo-local-locking",
+    "href": "SPEC-initial-yrPublish-design-0.0.1-v001.html#version-pinning-and-repo-local-locking",
+    "title": "6  SPEC-initial-yrPublish-design-0.0.1-v001.qmd",
+    "section": "6.4 Version pinning and repo-local locking",
+    "text": "6.4 Version pinning and repo-local locking\n\n6.4.1 Lockfile\nEach yrPublish project repo must record which yrPublish version it expects in:\n\n.yrPublish/yrPublish.lock\n\nThis file contains the locked yrPublish version (exact string).\n\n\n6.4.2 Vendoring implementation assets\nDuring yrPublish create-project:\n\nyrPublish copies/vends the yrPublish implementation assets for the locked version into:\n\n.yrPublish/&lt;locked-version&gt;/...\n\nsubsequent render / preview / etc uses the pinned assets from .yrPublish/&lt;locked-version&gt;/... rather than whatever scripts happen to exist globally.\n\nThis design must remain robust even if the developer upgrades the global yrPublish executable, because the project always uses the pinned toolset that matches its locked version.",
+    "crumbs": [
+      "Design documents",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>SPEC-initial-yrPublish-design-0.0.1-v001.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "SPEC-initial-yrPublish-design-0.0.1-v001.html#dependency-isolation-mechanism",
+    "href": "SPEC-initial-yrPublish-design-0.0.1-v001.html#dependency-isolation-mechanism",
+    "title": "6  SPEC-initial-yrPublish-design-0.0.1-v001.qmd",
+    "section": "6.5 Dependency isolation mechanism",
+    "text": "6.5 Dependency isolation mechanism\nDocument and implement one concrete approach:\n\nPin a Quarto version in .yrPublish/config/quarto-version.txt (written/templated by create-project).\nyrPublish uses a local vendored Quarto install under .yrPublish/tools/quarto/&lt;version&gt;/bin/quarto.\nA wrapper/shim ensures yrPublish subcommands call the vendored binary (not a random quarto from PATH).",
+    "crumbs": [
+      "Design documents",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>SPEC-initial-yrPublish-design-0.0.1-v001.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "SPEC-initial-yrPublish-design-0.0.1-v001.html#proposed-fileproject-layout-per-created-project",
+    "href": "SPEC-initial-yrPublish-design-0.0.1-v001.html#proposed-fileproject-layout-per-created-project",
+    "title": "6  SPEC-initial-yrPublish-design-0.0.1-v001.qmd",
+    "section": "6.6 Proposed file/project layout (per created project)",
+    "text": "6.6 Proposed file/project layout (per created project)\nrepo-root/\n  _quarto.yml                      # Quarto book config for the product\n  ...content files...\n\n  .yrPublish/\n    yrPublish.lock                # locked yrPublish version expected by this repo\n    config/\n      quarto-version.txt\n    tools/\n      quarto/&lt;version&gt;/bin/quarto\n    &lt;locked-version&gt;/\n      yrChapterNumber-v004.sh\n      yrRenumberChapters-v005.sh\n      yrBuildQuarto-v004.sh\n      copy_quartoYml_to_bookFolder-v001.R\n      yrZipQmdFiles.R\n      yrstuff-v001.js\n      yrStyles-main-v001.css\n      yrNocacheHeaders-v001.html",
+    "crumbs": [
+      "Design documents",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>SPEC-initial-yrPublish-design-0.0.1-v001.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "SPEC-initial-yrPublish-design-0.0.1-v001.html#examples-and-tests-describe-only-for-v0.0.1",
+    "href": "SPEC-initial-yrPublish-design-0.0.1-v001.html#examples-and-tests-describe-only-for-v0.0.1",
+    "title": "6  SPEC-initial-yrPublish-design-0.0.1-v001.qmd",
+    "section": "6.7 Examples and tests (describe-only for v0.0.1)",
+    "text": "6.7 Examples and tests (describe-only for v0.0.1)\n\n6.7.1 Example project(s)\nCreate one or more example projects under examples/ that exercise all features, including:\n\nrenumber-chapters + apply-chapter-numbers\nrender output demonstrating runtime chapter numbering correction\nverification that _book/_quarto.yml exists and that .qmd.zip artifacts are produced (if applicable to the existing wiring)\n\nEach example must include a README.md describing how to run it.\n\n\n6.7.2 Automated test strategy\nRecommend (and document) a mix of:\n\nCLI unit tests:\n\nhelp text correctness\nversion subcommand behavior:\n\nversion-cli returns the baked executable version\nversion-project reads .yrPublish/yrPublish.lock\nmismatch warning occurs when tool version differs from project lock\n\n\nFile-mutation tests:\n\napply-chapter-numbers updates &lt;yrChapterNumber&gt; in targeted .qmd files\nrenumber-chapters updates # yrChapterNumber comments in _quarto.yml\n\nIntegration tests (optional for v0.0.1, but documented):\n\nrun render in a temp directory with vendored assets\nassert expected artifacts exist in _book/",
+    "crumbs": [
+      "Design documents",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>SPEC-initial-yrPublish-design-0.0.1-v001.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "SPEC-initial-yrPublish-design-0.0.1-v001.html#acceptance-criteria",
+    "href": "SPEC-initial-yrPublish-design-0.0.1-v001.html#acceptance-criteria",
+    "title": "6  SPEC-initial-yrPublish-design-0.0.1-v001.qmd",
+    "section": "6.8 Acceptance Criteria",
+    "text": "6.8 Acceptance Criteria\n\nyrPublish subcommands exist and provide help output for each.\nyrPublish render applies chapter-number renumbering and produces a rendered site where chapter numbers are corrected at runtime.\nyrPublish create-project creates .yrPublish/ with:\n\n.yrPublish/yrPublish.lock\npinned/vendored implementation assets under .yrPublish/&lt;locked-version&gt;/\npinned Quarto under .yrPublish/tools/quarto/...\n\nyrPublish version-cli and yrPublish version-project both work and mismatch is warned.",
+    "crumbs": [
+      "Design documents",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>SPEC-initial-yrPublish-design-0.0.1-v001.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "SPEC-initial-yrPublish-design-0.0.1-v001.html#risks-and-mitigations",
+    "href": "SPEC-initial-yrPublish-design-0.0.1-v001.html#risks-and-mitigations",
+    "title": "6  SPEC-initial-yrPublish-design-0.0.1-v001.qmd",
+    "section": "6.9 Risks and mitigations",
+    "text": "6.9 Risks and mitigations\n\nRisk: project depends on runtime fetching of _book/_quarto.yml via JS.\n\nMitigation: pre-render must ensure _quarto.yml is copied into _book/ before the browser loads runtime JS.\n\nRisk: global tool upgrades break old projects.\n\nMitigation: use .yrPublish/yrPublish.lock and vendor/copy matching yrPublish assets into .yrPublish/&lt;locked-version&gt;/.",
+    "crumbs": [
+      "Design documents",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>SPEC-initial-yrPublish-design-0.0.1-v001.qmd</span>"
+    ]
+  },
+  {
+    "objectID": "llmChats/00010-initialDesignRequest/00010-prompt.html",
+    "href": "llmChats/00010-initialDesignRequest/00010-prompt.html",
+    "title": "7  00010-initialDesignRequest",
+    "section": "",
+    "text": "7.1 Background\nI have been creating several Quarto “book” projects that I render to HTML. Most of these are to support the classes that I teach. Some of these “books” have gotten quite large. I add material pretty regularly and these books gorw in size dynamically as time goes on. I keep the source code checked into git/github. For most of these books I have a 2nd github repo to which I copy the rendered website and serve that site through github pages.\nFor larger books, I use the github “part” concept to segment the book for easier navigation. For example these are some books that I created: https://y-rosenthal.github.io/DataManagementUsingR/ https://y-rosenthal.github.io/excelNotes/ https://y-rosenthal.github.io/rnotesLatest/ (see screen shots)\nI’m also attaching the _quarto.yml file for those books.",
+    "crumbs": [
+      "llm prompts",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>00010-initialDesignRequest</span>"
+    ]
+  },
+  {
+    "objectID": "llmChats/00010-initialDesignRequest/00010-prompt.html#background",
+    "href": "llmChats/00010-initialDesignRequest/00010-prompt.html#background",
+    "title": "7  00010-initialDesignRequest",
+    "section": "",
+    "text": "7.1.1 -v00n version numbers\nOn many of my files, I include a “-v00N” version number that I increment when I create a new version of the file. I started using this system before I started to use git. However, even though I started to use git I find that it is still helpful sometimes to have a version number directly in the name of a file. In that way, if I use the same file in different books, I can very easily see which version of the file I’m using. For example, I am currently up to v004 for the yrChapterNumber Bash script. Therefore, the actual name of the script that I would run would be “yrChapterNumber-v004.sh”. For Bash scripts and utilities, I generally only increment the -v00N number when I make breaking changes. So I might checking numerous non-breaking changes to yrChapterNumber-v004 (e.g. changing the comments).\nFor .qmd files I have a bunch of -v00N files from before I started using git. Now that I am using git, I just kept the same filenames. Sometimes, I might create a new file with a -v00N extension even though I’m using git. The motivation is often that I want more than one versin of a file to be immediately available in the repo for convenience purposes.\nThis may not be the best system but it works for me now. It’s a system with very loose rules. I just want you to know what the -v00N endings on many files are in my repos.",
+    "crumbs": [
+      "llm prompts",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>00010-initialDesignRequest</span>"
+    ]
+  },
+  {
+    "objectID": "llmChats/00010-initialDesignRequest/00010-prompt.html#custom-chapter-numbers-enabled-via-css-and-javascript-at-runtime",
+    "href": "llmChats/00010-initialDesignRequest/00010-prompt.html#custom-chapter-numbers-enabled-via-css-and-javascript-at-runtime",
+    "title": "7  00010-initialDesignRequest",
+    "section": "7.2 Custom chapter numbers (enabled via css and javascript at runtime)",
+    "text": "7.2 Custom chapter numbers (enabled via css and javascript at runtime)\n\n7.2.1 motivation\nI often modify the books in the middle of my teaching a course. Sometimes, I might add a chapter in the middle of the book which by default would cause the later chapter numbers to be incremented. I didn’t like that since I didn’t want to change the chapter numbers in the book in the middle of a course after students had already become familiar with the book’s layout. My thought was to label a new chapter that appears after chapter 12 for example, not as chapter 13, but rather as chapter 12b. In that way I could keep all existing chapter numbers. Unfortunately, Quarto doesn’t seem to have a standard way to have custom chapter names. Therefore I devised my own solution using custom markup and Javascript.\n\n\n7.2.2 custom markup\nI added a  element to every first level heading in every page in the book. I then also added custom comments to the _quarto.yml at the end of every chapter line in the yml file that shows the preferred chapter number. For example, the following might be in a _quarto.yml. It shows the chapter numbers I want after # yrChapterNumber. In the following example (there is no actual book with the contents of this example), I might have had a book with 5 chapters (that didn’t have the emptyTags.qmd chapter). Suppose, I would want to add the emptyTags.qmd chapter in the middle of the semester. I would want the chapter number to be 1b and keep the rest of the chapter numbers the same.\n- part: Intro to HTML\n  chapters:\n  - introToElements.qmd      # yrChapterNumber 1\n  - emptyTags.qmd            # yrChapterNumber 1b\n  - pageStructure.qmd        # yrChapterNumber 2\n  - tableTags.qmd           # yrChapterNumber  3\n\n- part: Intro to CSS\n  chapters:\n  - styleTag.qmd            # yrChapterNumber  4\n  - basicSelectors.qmd      # yrChapterNumber  5\nTo support this, all .qmd files would have single top level # header at the top of the file. The text of the # header in a .qmd file becomes the text displayed in the table of contents (TOC) on the left of the Quarto book website. To support custom chapter numbers I added a  element in the single top level # heading in all .qmd files in the Quarto book. I also created a Bash script, yrChapterNumber.sh, that gets the preferred chapter numbers from the _quarto.yml and populates the  elements with the correct chapter numbers. I would run this bash script prior to rendering the book. So for exmple after running the yrChapterNumber.sh script I might have the following:\nThe first line of the “introToElements.qmd” file might ha: # 1.  Introduction to HTML element\nThe first line of the “emptyTags.qmd” might be: # 1b.  Empty tableTags\nThe first line of the pageStructure.qmd file might be: # 2.  Structure of a valid HTML page\netc.\n\n\n7.2.3 Bash scripts\nI have the following bash scripts:\n\nyrChapterNumber.sh - described above in the previous section\nyrRenumberChapter.sh :\nSuppose for the next version of the book I want to start again with sequential chapter numbers. I would run the command yrRenumberChapters _quarto.yml. The script with change the numbers in the #yrChapterNumber comments in the _quarto.yml to be sequestial numbers, e.g. 1,2,3,4,5,6 instead of 1,1b,2,3,4,5 that was there before.\nyrBuildQuarto.sh\nI have a custom build script to support any other custom processing that I need to do to render the Quarto. For example at some point I think I needed to have the _quarto.yml file in the _book folder that contains the rendered website. The _quarto.yml is processed at runtime by custom javascript (in file yrstuff-v001.js)\n\nI believe that\n\n\n\n\n7.2.4 suppress original chapter numbers with custom css\nThe original Quarto rendered chapter numbers are suppressed from being displayed with the custom css in the file yrStyles-main-v0001.css, which currently contains the following:\n.chapter-number {\n    display: none;\n}\n\nyrchapternumber { font-size: 99%; color: red; }\n\n.yrAppendixChapterNumber {\n    display: none;\n}\n\n\n7.2.5 Custom javascript\nI have custom javascript that renumbers the chapters from the numbers that Quarto renders into the book, into the the numbers that are in the  elements. (Note that appendices are treated a little differently due to how quarto renders appendix numbers and names).\nI’ll tell you the truth - I don’t remember exactly how the following comes into play in the custom chapter numbering system system. However, it all works and I’m afraid to change it. Perhaps you could help me remember and understand how I designed this or perhaps you could point out some things that could be improved?\nThe javascript code in question in the file yrstuff-v001.js I believe it is part of this system. It parses the _quarto.yml file to map the new chapter numbers to the names of the qmd/html files. For this reason the _quarto.yml file must be in the rendered website’s folder (i.e. it must be copied to the _book folder at render time). This is accomplished by the R program, copy_quartoYml_to_bookFolder-v001.R program that is referenced in the pre-render: section in _quarto.yml. Note that the _quarto.yml file is also in the resources: section of the _quarto.yml file - I’m not sure if that is truly necessary or not - I don’t recall.\nIn the post-render: section of the _quarto.yml, I am also running an R script named yrZipQmdFiles.R that creates a .zip file from each .qmd file and puts it in the _book directory. I’m not 100% sure why I did that. If you can figure it out, let me know … I think that I might have wanted to add a link to each rendered HTML page that allows for the download of the source for the page. However, I don’t think I actually implemented that part - again I’m not sure - help me figure this out please …",
+    "crumbs": [
+      "llm prompts",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>00010-initialDesignRequest</span>"
+    ]
+  },
+  {
+    "objectID": "llmChats/00010-initialDesignRequest/00010-prompt.html#request-for-llm-to-help-me-with",
+    "href": "llmChats/00010-initialDesignRequest/00010-prompt.html#request-for-llm-to-help-me-with",
+    "title": "7  00010-initialDesignRequest",
+    "section": "7.3 Request for LLM to help me with",
+    "text": "7.3 Request for LLM to help me with\nI need help with the following:\n\n7.3.1 Request 1. Please help me try to answer the following questions\nI have a few questions. Maybe you can help me figure this out. The following are the first few lines of my _quarto.yml file\nproject:\n  type: book\n  output-dir: _book\n  pre-render: copy_quartoYml_to_bookFolder-v001.R\n  post-render: Rscript yrZipQmdFiles.R\n  resources:\n    - _quarto.yml\n    - yrNocacheHeaders-v001.html\n    - yrstuff-v001.js\n    - assignment-api-0000100-weatherDataApi-v002.qmd.zip\n    - assignment-api-0000100-weatherDataApi-v001.qmd.zip\n  render:\n    - \"*.qmd\"  # Ensures all .qmd files are rendered, even if not in `chapters`\n    - \"assignment-api-0000100-weatherDataApi-v001.qmd\"  # Ensure the old version gets rendered\nQUESTIONS:\n\nwhy did I use the Rscript command only in the post-render section but not in the pre-render section?\nIs there any reference to or use of the .zip files that I create in the post-render step in the finished rendered website?\nWhy do I include _quarto.yml in the resources: section and also copy the _quarto.yml file to the _book folder in the pre-render: section\nI’m not sure why I included the following. I think it was something I did when I was in a rush to get something working. If you see any particular reason why this is necessary, let me know. I don’t think this is necessary for the general approach to building these types of books.\nrender:\n  - \"*.qmd\"  # Ensures all .qmd files are rendered, even if not in `chapters`\n  - \"assignment-api-0000100-weatherDataApi-v001.qmd\"  # Ensure the old version gets rendered",
+    "crumbs": [
+      "llm prompts",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>00010-initialDesignRequest</span>"
+    ]
+  },
+  {
+    "objectID": "llmChats/00010-initialDesignRequest/00010-prompt.html#request-2.-document-system",
+    "href": "llmChats/00010-initialDesignRequest/00010-prompt.html#request-2.-document-system",
+    "title": "7  00010-initialDesignRequest",
+    "section": "7.4 Request 2. Document system",
+    "text": "7.4 Request 2. Document system\nPlease",
+    "crumbs": [
+      "llm prompts",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>00010-initialDesignRequest</span>"
+    ]
+  },
+  {
+    "objectID": "llmChats/00020-buildInitialSystem-answerQuestions/prompt.html",
+    "href": "llmChats/00020-buildInitialSystem-answerQuestions/prompt.html",
+    "title": "8  Create design spec",
+    "section": "",
+    "text": "8.1 include necessary dependencies\nLook at @../../docs/BackgroundAndFeatures and answer the questions in the document. Please update the document with all of your answers in a way that clearly labels that the answers are coming from Cursor’s AI.\nPlease create a design spec for the v0.0.1 version of this system. Write the document in Quarto markdow format into the file, docs/SPEC-initial-yrPublish-design-0.0.1-v001.qmd (see @docs/DOC-GUIDE-v001.qmd for info about writing documentation). Make sure to add this file into the @docs quarto book and render the docs book.\nPlease design a system that allows me to run a single bash cli command called yrPublish that is a Quarto wrapper.\nThis initial version of yrPublish is simply meant to recreate the same functionality as was available in the pre-yrPublish set of tools and techniques (AKA yrPublish version 0.0.0) that I had used prior to creating yrPublish. Use the scripts and assets from the v0.0.0 book that is located in the following folder as an example and as a source of scripts and resources. sampleBooks/DataManagementUsingRSrc/DataManagementUsingRSrc-v0.0.0, For this initial version of yrPublish, do not modify the code in the script files that were used in the DataManagementUsingRSrc-v0.0.0 book. Rather incorporate them unchanged as resources that get invoked by yrPublish. Note that in v0.0.2 (next version) of yrPublish. I will be fine with modify that code. However, to make sure that we don’t make mistakes, I’d like v0.0.1 of yrPublish to not change that code directly.\nThe yrPublsih cli should have options (or sub commands) to\nAll supporting tools and assets that are used to implement the yrPublish functionality should be placed in a .yrPublish folder at the root of the project. For example the yrChapterNumber-v004.sh , @yrRenumberChapters-v005.sh and yrBuildQuarto-v004.sh Bash scripts should be somewhere under this folder.\nDesign a mechanism such that the repo has everything it needs installed into the repo. For example, install the verion of Quarto that is being used in the repo directly into the repo folder. Similarly, create some mechanism to ensure that the correct version of Quarto and similar assets are being called when using the yrPublish repo. I’m not sure exactly how to do this yet, but something in a similar vein to renv or similar tools that maintain isolation environments.",
+    "crumbs": [
+      "llm prompts",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Create design spec</span>"
+    ]
+  },
+  {
+    "objectID": "llmChats/00020-buildInitialSystem-answerQuestions/prompt.html#cursor-ai-answers-from-cursors-ai",
+    "href": "llmChats/00020-buildInitialSystem-answerQuestions/prompt.html#cursor-ai-answers-from-cursors-ai",
+    "title": "8  00020-buildInitialSystem-answerQuestions",
+    "section": "",
+    "text": "8.1.1 Why did I use Rscript in post-render but not in pre-render?\nCursor AI answer: Quarto’s project pre-render / post-render scripts are supported for multiple languages (including R) via Quarto’s project-script mechanism. So the “correctness” generally does not depend on whether the entry is written as bare somefile.R or as an explicit Rscript somefile.R invocation. It’s most likely historical/style/convenience: pre-render: copy_quartoYml_to_bookFolder-v001.R is already valid, and post-render: Rscript yrZipQmdFiles.R is effectively just making the interpreter explicit.\n\n\n8.1.2 Is there any reference to or use of the .zip files created in post-render?\nCursor AI answer: In your described setup, the .zip files are created into _book and are listed under resources: in _quarto.yml, which means they are intended to be published as static assets. However, that does not automatically mean the existing site UI/JS references them. In most implementations of this pattern, the zips are used for “downloadable source” (or archival) even if you haven’t yet added a link/button per page. To confirm actual usage, you’d look for references to those zip filenames in templates/HTML/JS; based on the repo structure here, the published assets exist, but the linkage may be unimplemented.\n\n\n8.1.3 Why include _quarto.yml in resources: and also copy _quarto.yml to _book in pre-render?\nCursor AI answer: resources: is a Quarto mechanism for shipping static files into the output directory, so including _quarto.yml there ensures it becomes available in the built output. Separately, your pre-render step copies _quarto.yml into _book so runtime client-side JS (like yrstuff-v001.js) can fetch _quarto.yml from the final site. Keeping both is likely redundant: one mechanism may have been added to guarantee a working behavior during experimentation, or to ensure timing/paths matched what the JS fetch expects. Either way, the functional goal is the same: make _quarto.yml reliably available under _book/ at runtime.\n\n\n8.1.4 Why include render: - \"*.qmd\" and also explicitly list one older .qmd?\nCursor AI answer: For type: book, the chapters: list controls what Quarto includes in navigation, but Quarto may still skip rendering some files depending on project configuration and incremental rendering. render: \"*.qmd\" is a way to force rendering of all .qmd files (even if they are not in chapters). The additional explicit line for an older version (e.g. assignment-api-...-v001.qmd) is typically for “keep the old version” / “ensure it still renders” behavior: it forces the old version to be rendered even if later you switched chapters: or removed it from the main book structure.",
+    "crumbs": [
+      "llm prompts",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>00020-buildInitialSystem-answerQuestions</span>"
+    ]
+  },
+  {
+    "objectID": "llmChats/00020-buildInitialSystem-answerQuestions/prompt.html#create-design-spec",
+    "href": "llmChats/00020-buildInitialSystem-answerQuestions/prompt.html#create-design-spec",
+    "title": "8  Cursor AI answers (from Cursor’s AI)",
+    "section": "8.1 Create design spec",
+    "text": "8.1 Create design spec\nPlease create a design spec for the v0.0.1 version of this system. Write the document in Quarto markdow format into the file, docs/SPEC-initial-yrPublish-design-0.0.1-v001.qmd (see @docs/DOC-GUIDE-v001.qmd for info about writing documentation). Make sure to add this file into the @docs quarto book and render the docs book.\nPlease design a system that allows me to run a single bash cli command called yrPublish that is a Quarto wrapper.\nThis initial version of yrPublish is simply meant to recreate the same functionality as was available in the pre-yrPublish set of tools and techniques (AKA yrPublish version 0.0.0) that I had used prior to creating yrPublish. Use the scripts and assets from the v0.0.0 book that is located in the following folder as an example and as a source of scripts and resources. sampleBooks/DataManagementUsingRSrc/DataManagementUsingRSrc-v0.0.0, For this initial version of yrPublish, do not modify the code in the script files that were used in the DataManagementUsingRSrc-v0.0.0 book. Rather incorporate them unchanged as resources that get invoked by yrPublish. Note that in v0.0.2 (next version) of yrPublish. I will be fine with modify that code. However, to make sure that we don’t make mistakes, I’d like v0.0.1 of yrPublish to not change that code directly.\nThe yrPublsih cli should have options (or sub commands) to\n\ncreate an initial repo for a yrPublish rendered product (e.g. book, presentation, etc)\nrender the repo (similar to quarto render) (see @yrBuildQuarto-v004.sh)\npreview the repo (similar to quarto preview) (see @yrBuildQuarto-v004.sh)\nrenumber the chapters sequentially and store the new numbers in the _quarto.yml file (as in @yrRenumberChapters-v005.sh)\napply the chapter numbers from the _quarto.yml to the .qmd files (as in @yrChapterNumber-v004.sh). Note that this should automatically happen when the site it rendered, but this should also be an option to run separately when someone wants to. The help for this command should clearly state upfront that the command is also run when a render is done.\ndisplay help about the command. There should also be a help option for all sub commands.\n\nAll supporting tools and assets that are used to implement the yrPublish functionality should be placed in a .yrPublish folder at the root of the project. For example the yrChapterNumber-v004.sh , @yrRenumberChapters-v005.sh and yrBuildQuarto-v004.sh Bash scripts should be somewhere under this folder.",
+    "crumbs": [
+      "llm prompts",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Cursor AI answers (from Cursor's AI)</span>"
+    ]
+  },
+  {
+    "objectID": "llmChats/00020-buildInitialSystem-answerQuestions/prompt.html#include-necessary-dependencies",
+    "href": "llmChats/00020-buildInitialSystem-answerQuestions/prompt.html#include-necessary-dependencies",
+    "title": "8  Cursor AI answers (from Cursor’s AI)",
+    "section": "8.2 include necessary dependencies",
+    "text": "8.2 include necessary dependencies\nDesign a mechanism such that the repo has everything it needs installed into the repo. For example, install the verion of Quarto that is being used in the repo directly into the repo folder. Similarly, create some mechanism to ensure that the correct version of Quarto and similar assets are being called when using the yrPublish repo. I’m not sure exactly how to do this yet, but something in a similar vein to renv or similar tools that maintain isolation environments.",
+    "crumbs": [
+      "llm prompts",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Cursor AI answers (from Cursor's AI)</span>"
+    ]
+  },
+  {
+    "objectID": "llmChats/00020-buildInitialSystem-answerQuestions/prompt.html#create-example-projects",
+    "href": "llmChats/00020-buildInitialSystem-answerQuestions/prompt.html#create-example-projects",
+    "title": "8  Create design spec",
+    "section": "8.2 Create example project(s)",
+    "text": "8.2 Create example project(s)\nCreate one or more example projects that exercise all features of yrPublish. Put these in the examples folder. Also create a README.md in the @examples folder that explains what is in that folder. Each example project should be in a separate subfolder and include a README.md file that explains everything about that example.",
+    "crumbs": [
+      "llm prompts",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Create design spec</span>"
+    ]
+  },
+  {
+    "objectID": "llmChats/00020-buildInitialSystem-answerQuestions/prompt.html#create-test-cases",
+    "href": "llmChats/00020-buildInitialSystem-answerQuestions/prompt.html#create-test-cases",
+    "title": "8  Create design spec",
+    "section": "8.3 Create test cases",
+    "text": "8.3 Create test cases\nCreate a collection of automated tests for the system that test all features of the system. I’m not sure if these test cases should be directly tied to the example projects or not, please analyze this issue and make a recommendation along with the design of how to implement it.",
+    "crumbs": [
+      "llm prompts",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Create design spec</span>"
+    ]
+  },
+  {
+    "objectID": "llmChats/00020-buildInitialSystem-answerQuestions/prompt.html#please-ask",
+    "href": "llmChats/00020-buildInitialSystem-answerQuestions/prompt.html#please-ask",
+    "title": "8  Create design spec",
+    "section": "8.4 Please ask …",
+    "text": "8.4 Please ask …\nPlease grill me on questions you have …",
+    "crumbs": [
+      "llm prompts",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Create design spec</span>"
+    ]
+  },
+  {
+    "objectID": "llmChats/00030-implementSPEC-0.0.1/prompt.html",
+    "href": "llmChats/00030-implementSPEC-0.0.1/prompt.html",
+    "title": "9  00030-implementSPEC-0.0.1",
+    "section": "",
+    "text": "9.1 Cursor AI generated prompt (for your implementation chat)\nThis prompt was created by Cursor AI in response to your request to generate a starter prompt.\nYou are implementing yrPublish v0.0.1 according to the design spec in:",
+    "crumbs": [
+      "llm prompts",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>00030-implementSPEC-0.0.1</span>"
+    ]
+  },
+  {
+    "objectID": "llmChats/00030-implementSPEC-0.0.1/prompt.html#cursor-ai-generated-prompt-for-your-implementation-chat",
+    "href": "llmChats/00030-implementSPEC-0.0.1/prompt.html#cursor-ai-generated-prompt-for-your-implementation-chat",
+    "title": "9  00030-implementSPEC-0.0.1",
+    "section": "",
+    "text": "../../SPEC-initial-yrPublish-design-0.0.1-v001.qmd\n\n\n9.1.1 Goal\nBuild a single bash CLI named yrPublish that wraps Quarto and provides the v0.0.1 subcommands described in the spec.\n\n\n9.1.2 Key highlights (do not miss these)\nThe bullets below are the most commonly missed details, but you must implement the entire v0.0.1 SPEC document. Do not stop at these bullets—review and implement every requirement/acceptance criterion in: - ../../SPEC-initial-yrPublish-design-0.0.1-v001.qmd\n\nVersion pinning + repo-local locking\n\nEach yrPublish project must have .yrPublish/yrPublish.lock.\nDuring yrPublish create-project, yrPublish must vendor/copy the yrPublish implementation assets for the locked version into:\n\n.yrPublish/&lt;locked-version&gt;/...\n\nAll subsequent commands must use the pinned vendored assets.\n\nDependency isolation\n\nPin a Quarto version in .yrPublish/config/quarto-version.txt.\nUse a vendored Quarto install under .yrPublish/tools/quarto/&lt;version&gt;/bin/quarto.\nEnsure all subcommands run the vendored Quarto binary, not the global quarto from PATH.\n\nVersion reporting\n\nImplement:\n\nyrPublish version-cli → report the version baked into the running executable/script (do not read the project).\nyrPublish version-project &lt;project-path&gt; → read required version from .yrPublish/yrPublish.lock.\n\nAny project-operating subcommand should warn if version-cli != version-project.\n\nChapter numbering behavior\n\nImplement:\n\nyrPublish renumber-chapters to sequentially renumber # yrChapterNumber &lt;n&gt; comments in _quarto.yml using the existing v0.0.0 script logic (vendored unchanged for v0.0.1).\nyrPublish apply-chapter-numbers to update &lt;yrChapterNumber&gt;...&lt;/yrChapterNumber&gt; inside the .qmd files using the existing v0.0.0 script logic (vendored unchanged for v0.0.1).\n\nyrPublish render must automatically run apply-chapter-numbers before invoking Quarto.\n\n\n\n\n9.1.3 Constraints\n\nFor v0.0.1, do not modify the v0.0.0 scripts/assets directly; treat them as unchanged resources that are copied/vendored into projects.\n\n\n\n9.1.4 What to produce in this implementation chat\n\nCode changes to add the yrPublish CLI (including help + help &lt;subcommand&gt;).\nThe create-project workflow that scaffolds .yrPublish/ with:\n\nyrPublish.lock\nvendored/pinned yrPublish implementation assets under .yrPublish/&lt;locked-version&gt;/\nvendored Quarto under .yrPublish/tools/quarto/...\n\nAny internal helper scripts needed under the repo’s .yrPublish/ design area (as required by the spec).\nUpdate or add tests and/or example project scaffolding as described in the spec.\n\n\n\n9.1.5 Verification steps (explain how you verified)\n\nHow to test yrPublish version-cli and yrPublish version-project.\nHow to test that create-project produces the expected .yrPublish/ structure and pinned assets.\nHow to test render ensures chapter numbers are applied (and how to verify runtime JS renumbering works).\n\nIf anything is ambiguous or under-specified, ask clarifying questions before coding.",
+    "crumbs": [
+      "llm prompts",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>00030-implementSPEC-0.0.1</span>"
     ]
   }
 ]
