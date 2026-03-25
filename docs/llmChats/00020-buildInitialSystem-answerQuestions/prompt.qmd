@@ -1,15 +1,92 @@
 Look at @../../docs/BackgroundAndFeatures
 and answer the questions in the document.
+Please update the document with all of your answers
+in a way that clearly labels that the answers are 
+coming from Cursor's AI.
+
+
+## Create design spec
+
+Please create a design spec for the v0.0.1 version of this
+system. Write the document in Quarto markdow format into 
+the file, docs/SPEC-initial-yrPublish-design-0.0.1-v001.qmd
+(see @docs/DOC-GUIDE-v001.qmd for info about writing
+documentation). Make sure to add this file into the @docs 
+quarto book and render the docs book.
 
 Please design a system that allows me to run a single
-bash script called yrPublish that is a Quarto wrapper.
-The yrPublsih script should have options for 
+bash cli command called yrPublish that is a Quarto wrapper.
 
-- creating an initial yrPublish repo
-- rendering the repo   (see @
-- previewing the repo
-- renumbering the chapters (as in @yrRenumberChapters)
-- applying the new chapter numbers (as in @yrChapterNumber)
+This initial version of yrPublish is simply meant to 
+recreate the same functionality as was available in the
+pre-yrPublish set of tools and techniques 
+(AKA yrPublish version 0.0.0) that I had used prior to 
+creating yrPublish. 
+Use the scripts and assets from the v0.0.0 book that is
+located in the following folder as an example and as a 
+source of scripts and resources.
+sampleBooks/DataManagementUsingRSrc/DataManagementUsingRSrc-v0.0.0,
+For this initial version of yrPublish, do not modify
+the code in the script files that were used in the
+DataManagementUsingRSrc-v0.0.0 book. Rather incorporate them
+unchanged as resources that get invoked by yrPublish.
+Note that in v0.0.2 (next version) of yrPublish. I will be
+fine with modify that code. However, to make sure that we
+don't make mistakes, I'd like v0.0.1 of yrPublish to not 
+change that code directly.
 
+The yrPublsih cli should have options (or sub commands) to 
 
-The script should recognize if t
+- create an initial repo for a yrPublish rendered product (e.g. book, presentation, etc)
+- render the repo   (similar to quarto render) (see @yrBuildQuarto-v004.sh)
+- preview the repo (similar to quarto preview) (see @yrBuildQuarto-v004.sh)
+- renumber the chapters sequentially and store the new
+  numbers in the _quarto.yml file (as in @yrRenumberChapters-v005.sh)
+- apply the chapter numbers from the _quarto.yml to
+  the .qmd files (as in @yrChapterNumber-v004.sh). Note that this
+  should automatically happen when the site it rendered,
+  but this should also be an option to run separately when someone
+  wants to. The help for this command should clearly state
+  upfront that the command is also run when a render is
+  done.
+- display help about the command. There should also be 
+  a help option for all sub commands.
+
+All supporting tools and assets that are used to implement
+the yrPublish functionality should be placed in a 
+.yrPublish folder at the root of the project. For example 
+the yrChapterNumber-v004.sh , @yrRenumberChapters-v005.sh and 
+yrBuildQuarto-v004.sh Bash scripts should be somewhere 
+under this folder.
+
+## include necessary dependencies
+
+Design a mechanism such that the repo has everything it needs
+installed into the repo. For example, install the verion of
+Quarto that is being used in the repo directly into the repo
+folder. Similarly, create some mechanism to ensure that the correct
+version of Quarto and similar assets are being called when
+using the yrPublish repo. I'm not sure exactly how to do this
+yet, but something in a similar vein to renv or similar tools
+that maintain isolation environments.
+
+## Create example project(s)
+
+Create one or more example projects that exercise all 
+features of yrPublish. Put these in the examples folder.
+Also create a README.md in the @examples folder that explains
+what is in that folder. Each example project should be in a 
+separate subfolder and include a README.md file that 
+explains everything about that example. 
+
+## Create test cases
+
+Create a collection of automated tests for the system 
+that test all features of the system. I'm not sure if these 
+test cases should be directly tied to the example projects or 
+not, please analyze this issue and make a recommendation along 
+with the design of how to implement it.
+
+## Please ask ...
+
+Please grill me on questions you have ...
