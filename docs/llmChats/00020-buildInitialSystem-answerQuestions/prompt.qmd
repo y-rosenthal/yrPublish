@@ -1,10 +1,9 @@
 Look at @../../docs/BackgroundAndFeatures
-
-Please answer the questions in the document.
+and answer the questions in the document.
 
 Please design a system that allows me to run a single
-bash script called yrPublish.sh that is a Quarto wrapper.
-The yrPublsih.sh script should have options for 
+bash script called yrPublish that is a Quarto wrapper.
+The yrPublsih script should have options for 
 
 - creating an initial yrPublish repo
 - rendering the repo   (see @
